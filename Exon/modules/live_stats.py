@@ -32,7 +32,7 @@ from pyrogram import *
 from pyrogram.types import *
 
 import Exon.modules.sql.users_sql as sql
-from Exon import MONGO_DB_URL, pgram
+from Exon import MONGO_DB_URI, EVENT_LOGS, pgram
 
 worddb = MongoClient(MONGO_DB_URL)
 k = worddb["Exonstats"]["live_stats"]
@@ -51,8 +51,8 @@ async def live(client: Client, message: Message):
     if not is_live:
         k.insert_one({"live": "stats", "user": users, "chat": chats})
         await pgram.edit_message_text(
-            chat_id=-1001557334564,  # channel id
-            message_id=67,  # channel msg id
+            chat_id={EVENT_LOGS},  # channel id
+            message_id=1,  # channel msg id
             text=captionk,
             disable_web_page_preview=True,
         )
@@ -62,8 +62,8 @@ async def live(client: Client, message: Message):
             k.update_one({"live": "stats"}, {"$set": {"user": users, "chat": chats}})
             # editing chat_id and message id
             await pgram.edit_message_text(
-                chat_id=-1001557334564,  # hear your channel id
-                message_id=67,  # Channel msg id
+                chat_id={EVENT_LOGS}, # hear your channel id
+                message_id=1,  # Channel msg id
                 text=captionk,
                 disable_web_page_preview=True,
             )
