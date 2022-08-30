@@ -32,9 +32,9 @@ from pyrogram import *
 from pyrogram.types import *
 
 import Exon.modules.sql.users_sql as sql
-from Exon import MONGO_DB_URI, pgram
+from Exon import MONGO_DB_URL, pgram
 
-worddb = MongoClient(MONGO_DB_URI)
+worddb = MongoClient(MONGO_DB_URL)
 k = worddb["Exonstats"]["live_stats"]
 
 
