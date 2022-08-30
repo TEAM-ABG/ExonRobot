@@ -23,7 +23,7 @@ SOFTWARE.
 """
 
 # ""DEAR PRO PEOPLE,  DON'T REMOVE & CHANGE THIS LINE
-# TG :- @Abishnoi1M 
+# TG :- @Abishnoi1M
 #     MY ALL BOTS :- Abishnoi_bots
 #     GITHUB :- KingAbishnoi ""
 
@@ -51,8 +51,8 @@ async def live(client: Client, message: Message):
     if not is_live:
         k.insert_one({"live": "stats", "user": users, "chat": chats})
         await pgram.edit_message_text(
-            chat_id=-1001557334564, #channel id
-            message_id=67,  #channel msg id
+            chat_id=-1001557334564,  # channel id
+            message_id=67,  # channel msg id
             text=captionk,
             disable_web_page_preview=True,
         )
@@ -62,17 +62,8 @@ async def live(client: Client, message: Message):
             k.update_one({"live": "stats"}, {"$set": {"user": users, "chat": chats}})
             # editing chat_id and message id
             await pgram.edit_message_text(
-                chat_id=-1001557334564, #hear your channel id
+                chat_id=-1001557334564,  # hear your channel id
                 message_id=67,  # Channel msg id
                 text=captionk,
                 disable_web_page_preview=True,
             )
-
-
-
-
-
-
-
-
-
