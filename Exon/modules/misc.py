@@ -42,8 +42,9 @@ import Exon.modules.sql.users_sql as sql
 from Exon import DEMONS as SUPPORT_USERS
 from Exon import DEV_USERS
 from Exon import DRAGONS as SUDO_USERS
-from Exon import INFOPIC, OWNER_ID, TIGERS
+from Exon import INFOPIC, OWNER_ID
 from Exon import OWNER_USERNAME as AKBOSS
+from Exon import TIGERS
 from Exon import WOLVES as WHITELIST_USERS
 from Exon import StartTime, dispatcher, sw
 from Exon.__main__ import STATS, USER_INFO
