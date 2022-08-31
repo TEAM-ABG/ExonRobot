@@ -43,6 +43,7 @@ from Exon import DEMONS as SUPPORT_USERS
 from Exon import DEV_USERS
 from Exon import DRAGONS as SUDO_USERS
 from Exon import INFOPIC, OWNER_ID, TIGERS
+from Exon import OWNER_USERNAME as AKBOSS
 from Exon import WOLVES as WHITELIST_USERS
 from Exon import StartTime, dispatcher, sw
 from Exon.__main__ import STATS, USER_INFO
@@ -325,10 +326,10 @@ def stats(update, context):
     try:
         update.effective_message.reply_text(
             status
-            + "\n*Bot statistics*:\n"
+            + "\n*ʙᴏᴛ sᴛᴀᴛɪsᴛɪᴄs*:\n"
             + "\n".join([mod.__stats__() for mod in STATS])
             + "\n\n[ɢɪᴛʜᴜʙ](https://github.com/KingAbishnoi/ExonRobot) | [ᴛᴇʟᴇɢʀᴀᴍ](https://t.me/AbishnoiMF)\n\n"
-            + "「 ʙʏ[ᴀʙɪsʜɴᴏɪ](t.me/{OWNER_USERNAME}) 」\n",
+            + f"「 ʙʏ[ᴀʙɪsʜɴᴏɪ](t.me/{OWNER_USERNAME}) 」\n",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
         )
@@ -337,12 +338,12 @@ def stats(update, context):
             (
                 (
                     (
-                        "\n*Bot statistics*:\n"
+                        "\n*ʙᴏᴛ sᴛᴀᴛɪsᴛɪᴄs*:\n"
                         + "\n".join(mod.__stats__() for mod in STATS)
                     )
                     + "\n\n⍙ [ɢɪᴛʜᴜʙ](https://github.com/KingAbishnoi/ExonRobot) | [ᴛᴇʟᴇɢʀᴀᴍ](https://t.me/AbishnoiMF)\n\n"
                 )
-                + "「 ʙʏ [ᴀʙɪsʜɴᴏɪ](t.me/{OWNER_USERNAME}) 」\n"
+                + f"「 ʙʏ [ᴀʙɪsʜɴᴏɪ](t.me/{OWNER_USERNAME}) 」\n"
             ),
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
