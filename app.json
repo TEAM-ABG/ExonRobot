@@ -45,8 +45,8 @@
          "value": ""
       },  
       "DATABASE_URL": {
-         "description": "Your Postgres SQL DataBase URI, Get one from ElephantSQL.com",
-         "required": false,
+         "description": "Your Postgres SQL DataBase URI, Get one from https://customer.elephantsql.com/login",
+         "required": true,
          "value": ""
       }, 
       "DATABASE_URL2": {
