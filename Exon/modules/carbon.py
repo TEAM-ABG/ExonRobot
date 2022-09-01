@@ -5,7 +5,7 @@ from pyrogram import filters
 from Exon import aiohttpsession as aiosession
 from Exon import pgram
 from Exon.utils.errors import capture_err
-
+from telegram import InlineKeyboardButton, ParseMode, Update 
 
 async def make_carbon(code):
     url = "https://carbonara.vercel.app/api/cook"
@@ -29,11 +29,35 @@ async def carbon_func(_, message):
     await m.delete()
     carbon.close()
 
+    
+ABISHNOIX = "https://telegra.ph/file/bff9ee4cf39621303e292.jpg"
 
+
+@pgram.on_message(filters.command("repo"))
+async def repo(_, message):
+    await message.reply_photo(
+        photo=ABISHNOIX,
+        caption=f"""✨
+** ᴇɴᴊᴏʏ**
+""",
+        reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton(
+                        "•ᴍᴜꜱɪᴄ•", url="https://github.com/KingAbishnoi"
+                    ),
+                    InlineKeyboardButton(
+                        "•ʀᴏʙᴏᴠ1•", url="https://github.com/TEAM-ABG/ExonRobot"
+                    ),
+                ]
+            ]
+        ),
+    )
+    
 __mod_name__ = "𝙲ᴀʀʙᴏɴ"
 
 __help__ = """
 
 /carbon *:* ᴍᴀᴋᴇs ᴄᴀʀʙᴏɴ ғᴏʀ ʀᴇᴘʟɪᴇᴅ ᴛᴇxᴛ
-
+/repo *:*🌟
  """
