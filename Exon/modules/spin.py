@@ -249,7 +249,7 @@ Note:
 ᴏᴛʜᴇʀᴡɪsᴇ, the ᴏʟᴅ message ᴡɪʟʟ ɢᴇᴛ ʀᴇ-ᴘɪɴɴᴇᴅ ᴡʜᴇɴ ᴛʜᴇ ᴄʜᴀɴɴᴇʟ sᴇɴᴅs ᴀɴʏ ᴍᴇssᴀɢᴇs.
 """
 
-__mod_name__ = "𝙿ɪɴs"
+__mod_name__ = "𝙿ɪɴs 🥏"
 
 
 PIN_HANDLER = CommandHandler("pin", pin, pass_args=True, filters=Filters.group)
