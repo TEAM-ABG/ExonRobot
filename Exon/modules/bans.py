@@ -573,7 +573,7 @@ __help__ = """
 • /abishnoi <chatid> <ᴍsɢ>*:* `ᴍᴀᴋᴇ ᴍᴇ sᴇɴᴅ ᴀ ᴍᴇssᴀɢᴇ ᴛᴏ ᴀ sᴘᴇᴄɪғɪᴄ ᴄʜᴀᴛ `.
 """
 
-__mod_name__ = "𝙱ᴀɴs"
+__mod_name__ = "𝙱ᴀɴs 🚫"
 
 BAN_HANDLER = CommandHandler(["ban", "sban"], ban, run_async=True)
 TEMPBAN_HANDLER = CommandHandler(["tban"], temp_ban, run_async=True)
