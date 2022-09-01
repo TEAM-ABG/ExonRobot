@@ -40,8 +40,8 @@ from Exon.modules.mongo.karma_mongo import (
 )
 from Exon.utils.errors import capture_err
 
-regex_upvote = r"^((?i)\+|\+\+|\+1|thx|tnx|ty|thank you|thanx|thanks|pro|cool|good|👍|nice|noice|piro)$"
-regex_downvote = r"^(\-|\-\-|\-1|👎|noob|Noob|gross|fuck off)$"
+regex_upvote = r"^((?i)\+|\+\+|\+1|thx|tnx|ty|thank you|thanx|thanks|pro|cool|good|👍|nice|noice|piro|chutiya|mc|bc|lawde|kakashi)$"
+regex_downvote = r"^(\-|\-\-|\-1|👎|noob|Noob|gross|fuck off|xelcius)$"
 
 karma_positive_group = 3
 karma_negative_group = 4
@@ -177,7 +177,7 @@ async def karma(_, message):
         await message.reply_text(f"**ᴛᴏᴛᴀʟ ᴘᴏɪɴᴛ :** {karma}")
 
 
-__mod_name__ = "𝙺ᴀʀᴍᴀ"
+__mod_name__ = "𝙺ᴀʀᴍᴀ 🕵️"
 __help__ = """
 
 *ᴜᴘᴠᴏᴛᴇ* - ᴜsᴇ ᴜᴘᴠᴏᴛᴇ ᴋᴇʏᴡᴏʀᴅs ʟɪᴋᴇ "+", "+1", "thanks", ᴇᴛᴄ. ᴛᴏ ᴜᴘᴠᴏᴛᴇ ᴀ ᴍᴇssᴀɢᴇ.
