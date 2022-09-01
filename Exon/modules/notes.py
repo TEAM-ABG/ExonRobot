@@ -602,7 +602,7 @@ __help__ = """
  
 """
 
-__mod_name__ = "𝙽ᴏᴛᴇs"
+__mod_name__ = "𝙽ᴏᴛᴇs 📝"
 
 GET_HANDLER = CommandHandler("get", cmd_get, run_async=True)
 HASH_GET_HANDLER = MessageHandler(Filters.regex(r"^#[^\s]+"), hash_get, run_async=True)
