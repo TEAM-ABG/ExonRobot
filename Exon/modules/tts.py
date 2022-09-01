@@ -77,6 +77,7 @@ async def _(event):
         )
         os.remove("k.mp3")
 
+
 __help__ = """
 
 ⍟ /tts hi|hello  *:* `ᴛᴇxᴛ ᴛᴏ sᴘᴇᴇᴄʜ `
@@ -85,5 +86,3 @@ __help__ = """
 """
 
 __mod_name__ = "𝚃ᴛs"
-
-        
