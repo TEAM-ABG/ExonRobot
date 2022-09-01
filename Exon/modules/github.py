@@ -28,7 +28,7 @@ from pyrogram import filters
 from Exon import pgram as abishnoi
 from Exon.utils.errors import capture_err
 
-__mod_name__ = "𝙶ɪᴛʜᴜʙ"
+__mod_name__ = "𝙶ɪᴛʜᴜʙ 👾"
 
 
 @abishnoi.on_message(filters.command("git", "GitHub"))
