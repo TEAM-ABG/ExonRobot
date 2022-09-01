@@ -90,9 +90,9 @@ class Config(object):
     # YOUTUBE_API_KEY = Config.YOUTUBE_API_KEY
     HELP_IMG = "HELP_IMG"
     START_IMG = ""
-    DATABASE_URL = "DATABASE_URL"  #sql 
-    DATABASE_URL2 = "DATABASE_URL2" #mogodb
-    
+    DATABASE_URL = "DATABASE_URL"  # sql
+    DATABASE_URL2 = "DATABASE_URL2"  # mogodb
+
 
 class Production(Config):
     LOGGER = True
