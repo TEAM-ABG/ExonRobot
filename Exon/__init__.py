@@ -232,7 +232,7 @@ else:
         TIGERS = {int(x) for x in Config.TIGERS or []}
     except ValueError:
         raise Exception("ʏᴏᴜʀ ᴛɪɢᴇʀ ᴜsᴇʀs ʟɪsᴛ ᴅᴏᴇs ɴᴏᴛ ᴄᴏɴᴛᴀɪɴ ᴠᴀʟɪᴅ ɪɴᴛᴇɢᴇʀs.")
- 
+
     INFOPIC = Config.INFOPIC
     EVENT_LOGS = Config.EVENT_LOGS
     ERROR_LOGS = Config.ERROR_LOGS
@@ -273,7 +273,7 @@ else:
     START_IMG = Config.START_IMG
     DB_URL = Config.DATABASE_URL
     BOT_API_URL = Config.BOT_API_URL
-    
+
 # try:
 # BL_CHATS = {int(x) for x in Config.BL_CHATS or []}
 # except ValueError:
