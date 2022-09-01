@@ -186,7 +186,7 @@ async def nsfw_enable_disable(_, message):
         await message.reply_text("ᴜɴᴋɴᴏᴡɴ sᴜғғɪx, ᴜsᴇ /antiporn [on/off]")
 
 
-__mod_name__ = "𝙿ᴏʀɴ"
+__mod_name__ = "𝙿ᴏʀɴ 💦"
 
 
 __help__ = """
