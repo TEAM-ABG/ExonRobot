@@ -360,7 +360,7 @@ Tʜɪs ᴡɪʟʟ ᴍᴜᴛᴇ ᴜsᴇʀs ɪғ ᴛʜᴇʏ sᴇɴᴅ ᴍᴏʀᴇ �
  
  """
 
-__mod_name__ = "𝙰ɴᴛɪ-ғʟᴏᴏᴅ"
+__mod_name__ = "𝙰ɴᴛɪ-ғʟᴏᴏᴅ ⛵"
 
 FLOOD_BAN_HANDLER = MessageHandler(
     Filters.all & ~Filters.status_update & Filters.chat_type.groups,
