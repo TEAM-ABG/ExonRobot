@@ -226,7 +226,7 @@ def get_user_info(chat: Chat, user: User) -> str:
         text += "\n\n<code>ᴍᴇᴍʙᴇʀ ᴏғ Exon ᴛᴇᴄʜ, ᴛᴏᴛᴀʟʟʏ ᴄᴏᴏʟ ʀɪɢʜᴛ ?</code>"
         disaster_level_present = True
     if disaster_level_present:
-        text += ' [<a href="https://t.me/abishnoi_bots/60">?</a>]'
+        text += ' [<a href="https://t.me/kakashi_bots_updates/11">?</a>]'
     text += "\n"
     for mod in USER_INFO:
         if mod.__mod_name__ == "Users":
