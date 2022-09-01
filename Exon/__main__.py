@@ -125,7 +125,7 @@ PM_START_TEXT = """
  ➻ *ᴜsᴇʀs:* `{}`
  ➻ *chats:* `{}`
 *─────────────*
-✪ ʜɪᴛ *ʜᴇʟᴘ* ᴛᴏ sᴇᴇ ᴍʏ ᴘᴏᴡᴇʀ ʙᴜᴅᴅʏ \n[➥](https://telegra.ph/file/2c522cdb9b4fb61b71a7c.mp4)*:*\nғɪʀꜱᴛ ᴀᴅᴅ ᴍᴇ ɪɴ ɢʀᴏᴜᴘ ᴛʜᴇɴ ꜱᴇᴇ ᴍʏ ᴘᴏᴡᴇʀ ʙᴀʙʏ 
+✪ ʜɪᴛ *ʜᴇʟᴘ* ᴛᴏ sᴇᴇ ᴍʏ ᴘᴏᴡᴇʀ ʙᴜᴅᴅʏ \n[➥](https://telegra.ph/file/2c522cdb9b4fb61b71a7c.mp4)*:*\n[ғɪʀꜱᴛ ᴀᴅᴅ ᴍᴇ ɪɴ ɢʀᴏᴜᴘ ᴛʜᴇɴ ꜱᴇᴇ ᴍʏ ᴘᴏᴡᴇʀ ʙᴀʙʏ!](https://t.me/MisakaXmanagementBot?startgroup=true)
 """
 
 
