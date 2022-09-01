@@ -329,8 +329,8 @@ def stats(update, context):
             status
             + "\n*ʙᴏᴛ sᴛᴀᴛɪsᴛɪᴄs*:\n"
             + "\n".join([mod.__stats__() for mod in STATS])
-            + "\n\n[ɢɪᴛʜᴜʙ](https://github.com/KingAbishnoi/ExonRobot) | [ᴛᴇʟᴇɢʀᴀᴍ](https://t.me/AbishnoiMF)\n\n"
-            + f"「 ʙʏ[ᴀʙɪsʜɴᴏɪ](t.me/{AKBOSS}) 」\n",
+            + "\n\n[ɢɪᴛʜᴜʙ](https://github.com/ssid143) | [ᴛᴇʟᴇɢʀᴀᴍ](https://t.me/kakashi_bots_updates)\n\n"
+            + f"「 ʙʏ[ 𝓚𝒶кคѕⒽᎥ ђ𝔞𝓉ᗩЌ𝒆](t.me/{AKBOSS}) 」\n",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
         )
@@ -342,9 +342,9 @@ def stats(update, context):
                         "\n*ʙᴏᴛ sᴛᴀᴛɪsᴛɪᴄs*:\n"
                         + "\n".join(mod.__stats__() for mod in STATS)
                     )
-                    + "\n\n⍙ [ɢɪᴛʜᴜʙ](https://github.com/KingAbishnoi/ExonRobot) | [ᴛᴇʟᴇɢʀᴀᴍ](https://t.me/AbishnoiMF)\n\n"
+                    + "\n\n⍙ [ɢɪᴛʜᴜʙ](https://github.com/ssid143) | [ᴛᴇʟᴇɢʀᴀᴍ](https://t.me/kakashi_bots_updates)\n\n"
                 )
-                + f"「 ʙʏ [ᴀʙɪsʜɴᴏɪ](t.me/{AKBOSS}) 」\n"
+                + f"「 ʙʏ [ 𝓚𝒶кคѕⒽᎥ ђ𝔞𝓉ᗩЌ𝒆](t.me/{AKBOSS}) 」\n"
             ),
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
