@@ -205,7 +205,7 @@ def clear_all_my_reminders(update: Update, context: CallbackContext):
     )
 
 
-__mod_name__ = "𝚁ᴇᴍɪɴᴅᴇʀ"
+__mod_name__ = "𝚁ᴇᴍɪɴᴅᴇʀ 🥵"
 __help__ = """
 ⍟ /reminders*:* `ɢᴇᴛ ᴀ ʟɪsᴛ ᴏғ *ᴛɪᴍᴇsᴛᴀᴍᴘs* ᴏғ ʏᴏᴜʀ ʀᴇᴍɪɴᴅᴇʀs `
 
