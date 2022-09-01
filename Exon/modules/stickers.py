@@ -652,7 +652,7 @@ def makepack_internal(
     name = user.first_name
     name = name[:50]
     keyboard = InlineKeyboardMarkup(
-        [[InlineKeyboardButton(text="View Pack", url=f"{packname}")]]
+        [[InlineKeyboardButton(text="View Pack", url=f"t.me/addstickers/{packname}")]]
     )
     try:
         extra_version = ""
