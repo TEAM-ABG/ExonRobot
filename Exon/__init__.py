@@ -108,7 +108,7 @@ if ENV:
     )  # Info Pic (use True[Value] If You Want To Show In /info.)
     EVENT_LOGS = os.environ.get("EVENT_LOGS","-1001655126347")  # G-Ban Logs (Channel) (-100)
     ERROR_LOGS = os.environ.get(
-        "ERROR_LOGS", None
+        "ERROR_LOGS"," -1001554894157"
     )  # Error Logs (Channel Ya Group Choice Is Yours) (-100)
     WEBHOOK = bool(os.environ.get("WEBHOOK", False))
     ARQ_API_URL = os.environ.get("ARQ_API_URL", None)
