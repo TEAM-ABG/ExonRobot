@@ -31,7 +31,7 @@ async def carbon_func(_, message):
     carbon.close()
 
 
-ABISHNOIX = "https://telegra.ph/file/bff9ee4cf39621303e292.jpg"
+ABISHNOIX = "https://telegra.ph/file/ad980fc47067f885cc3ca.jpg"
 
 
 @pgram.on_message(filters.command("repo"))
@@ -45,10 +45,10 @@ async def repo(_, message):
             [
                 [
                     InlineKeyboardButton(
-                        "•ᴍᴜꜱɪᴄ•", url="https://github.com/KingAbishnoi"
+                        "•ᴍᴜꜱɪᴄ•", url="https://telegra.ph/file/9b0455dae14d5639f936d.mp4"
                     ),
                     InlineKeyboardButton(
-                        "•ʀᴏʙᴏᴠ1•", url="https://github.com/TEAM-ABG/ExonRobot"
+                        "•ʀᴏʙᴏᴠ1•", url="https://github.com/ssid143"
                     ),
                 ]
             ]
@@ -56,7 +56,7 @@ async def repo(_, message):
     )
 
 
-__mod_name__ = "𝙲ᴀʀʙᴏɴ"
+__mod_name__ = "𝙲ᴀʀʙᴏɴ ©️"
 
 __help__ = """
 
