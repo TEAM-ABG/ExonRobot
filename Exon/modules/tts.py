@@ -29,14 +29,7 @@ SOFTWARE.
 
 import os
 
-from gtts import gTTS
-from gtts import gTTSError
-from telethon import *
-from telethon.tl import functions
-from telethon.tl import types
-from telethon.tl.types import *
-
-from Exon import *
+from gtts import gTTS, gTTSError
 
 from Exon import telethn as tbot
 from Exon.events import register
@@ -55,9 +48,7 @@ async def _(event):
     elif "|" in input_str:
         lan, text = input_str.split("|")
     else:
-        await event.reply(
-            "ɪɴᴠᴀʟɪᴅ ꜱʏɴᴛᴀx\nғᴏʀ eg: `/tts en | hello`"
-        )
+        await event.reply("ɪɴᴠᴀʟɪᴅ ꜱʏɴᴛᴀx\nғᴏʀ eg: `/tts en | hello`")
         return
     text = text.strip()
     lan = lan.strip()
