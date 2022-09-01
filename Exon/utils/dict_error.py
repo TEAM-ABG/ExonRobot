@@ -72,7 +72,7 @@ erh = (
 # alert close if something unexpected happened!
 """
 Kang with credit 
-© https://github.com/ItsmeHyper13
-@ShiningOff | @HYPER_AD13
+© https://github.com/ssid143
+@SIXTH_H0KAGE | @C0PY_HOKAGE
 BTW DON'T CHNGE CREDIT BRUSH 🌝🙄
 """
