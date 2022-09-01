@@ -174,7 +174,7 @@ async def quotly_func(client, message: Message):
         print(e)
 
 
-__mod_name__ = "𝚀ᴜᴏᴛᴇ"
+__mod_name__ = "𝚀ᴜᴏᴛᴇ 💗"
 
 __help__ = """   
 
