@@ -465,7 +465,7 @@ async def cb_handler(client: pgram, query: CallbackQuery):
             await removebg_sticker(client, query.message)
 
 
-__mod_name__ = "𝙴ᴅɪᴛᴏʀ"
+__mod_name__ = "𝙴ᴅɪᴛᴏʀ 💥"
 __help__ = f"""
 {BOT_NAME} ʜᴀᴠᴇ sᴏᴍᴇ ᴀᴅᴠᴀɴᴄᴇᴅ ɪᴍᴀɢᴇ ᴇᴅɪᴛɪɴɢ ᴛᴏᴏʟs ɪɴʙᴜɪʟᴛ
 
