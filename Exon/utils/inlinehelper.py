@@ -85,7 +85,7 @@ async def inline_help_func(__HELP__):
             title="ɪɴʟɪɴᴇ ᴄᴏᴍᴍᴀɴᴅs",
             description="ʜᴇʟᴘ ʀᴇʟᴀᴛᴇᴅ ᴛᴏ ɪɴʟɪɴᴇ ᴜsᴀɢᴇ.",
             input_message_content=InputTextMessageContent(__HELP__),
-            thumb_url="https://telegra.ph/file/03264297589e442200052.jpg",
+            thumb_url="https://telegra.ph/file/2007f9e34a649fa2a2826.jpg",
             reply_markup=buttons,
         )
     ]
@@ -115,7 +115,7 @@ async def alive_function(answers):
         InlineQueryResultArticle(
             title="ᴀʟɪᴠᴇ",
             description="ᴄʜᴇᴄᴋ ʙᴏᴛ sᴛᴀᴛs",
-            thumb_url="https://telegra.ph/file/03264297589e442200052.jpg",
+            thumb_url="https://telegra.ph/file/2007f9e34a649fa2a2826.jpg",
             input_message_content=InputTextMessageContent(
                 msg, disable_web_page_preview=True
             ),
