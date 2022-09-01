@@ -52,4 +52,4 @@ async def take_ss(_, message: Message):
         await message.reply_text(str(e))
 
 
-__mod_name__ = "𝚆ᴇʙss"
+__mod_name__ = "𝚆ᴇʙss 😀"
