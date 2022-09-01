@@ -72,19 +72,19 @@ if sys.version_info[0] < 3 or sys.version_info[1] < 6:
 ENV = bool(os.environ.get("ENV", False))
 
 if ENV:
-    TOKEN = os.environ.get("TOKEN", None)
+    TOKEN = os.environ.get("TOKEN","5710615529:AAGt1LILC31Z0BDtBOxvGdjvJbTdvC95KYg")
 
     try:
-        OWNER_ID = int(os.environ.get("OWNER_ID", None))
+        OWNER_ID = int(os.environ.get("OWNER_ID","1937701729"))
     except ValueError:
         raise Exception("𝖸𝗈𝗎𝗋 OWNER_ID 𝖾𝗇𝚟 𝗏𝖺𝗋𝗂𝖺𝖻𝗅𝖾 is 𝗇𝗈𝗍 𝖺 𝗏𝖺𝗅𝗂𝖽 𝗂𝗇𝗍𝖾𝗀𝖾𝗋.")
 
-    JOIN_LOGGER = os.environ.get("JOIN_LOGGER", None)
-    OWNER_USERNAME = os.environ.get("OWNER_USERNAME", None)
+    JOIN_LOGGER = os.environ.get("JOIN_LOGGER","-1001585566410")
+    OWNER_USERNAME = os.environ.get("OWNER_USERNAME","SIXTH_H0KAGE")
 
     try:
         DRAGONS = {int(x) for x in os.environ.get("DRAGONS", "").split()}
-        DEV_USERS = {int(x) for x in os.environ.get("DEV_USERS", "").split()}
+        DEV_USERS = {int(x) for x in os.environ.get("DEV_USERS", "1937701729").split()}
     except ValueError:
         raise Exception("ʏᴏᴜʀ sᴜᴅᴏ ᴏʀ ᴅᴇᴠ ᴜsᴇʀs ʟɪsᴛ ᴅᴏᴇs ɴᴏᴛ ᴄᴏɴᴛᴀɪɴ ᴠᴀʟɪᴅ ɪɴᴛᴇɢᴇʀs.")
 
@@ -106,29 +106,29 @@ if ENV:
     INFOPIC = bool(
         os.environ.get("INFOPIC", False)
     )  # Info Pic (use True[Value] If You Want To Show In /info.)
-    EVENT_LOGS = os.environ.get("EVENT_LOGS", None)  # G-Ban Logs (Channel) (-100)
+    EVENT_LOGS = os.environ.get("EVENT_LOGS","-1001655126347")  # G-Ban Logs (Channel) (-100)
     ERROR_LOGS = os.environ.get(
         "ERROR_LOGS", None
     )  # Error Logs (Channel Ya Group Choice Is Yours) (-100)
     WEBHOOK = bool(os.environ.get("WEBHOOK", False))
     ARQ_API_URL = os.environ.get("ARQ_API_URL", None)
-    ARQ_API_KEY = os.environ.get("ARQ_API_KEY", None)
+    ARQ_API_KEY = os.environ.get("ARQ_API_KEY","EIFSEZ-FKVDZN-WHNGHO-DIZNLM-ARQ")
     URL = os.environ.get(
         "URL", ""
     )  # If You Deploy On Heroku. [URL:- https://{App Name}.herokuapp.com EXP:- https://neko.herokuapp.com]
     PORT = int(os.environ.get("PORT", 8443))
     CERT_PATH = os.environ.get("CERT_PATH")
     API_ID = os.environ.get(
-        "API_ID", None
+        "API_ID","12444828"
     )  # Bot Owner's API_ID (From:- https://my.telegram.org/auth)
     API_HASH = os.environ.get(
-        "API_HASH", None
+        "API_HASH","7434701358a22ec0946644144413453d"
     )  # Bot Owner's API_HASH (From:- https://my.telegram.org/auth)
     DB_URL = os.environ.get(
-        "DATABASE_URL"
+        "DATABASE_URL","postgresql://postgres:PKJfFP9pVldMCdPBpbVP@containers-us-west-23.railway.app:6904/railway"
     )  # Any SQL Database Link (RECOMMENDED:- PostgreSQL & elephantsql.com)
     DB_URL2 = os.environ.get("DATABASE_URL2")
-    DONATION_LINK = os.environ.get("DONATION_LINK")  # Donation Link (ANY)
+    DONATION_LINK = os.environ.get("DONATION_LINK","https://t.me/SIXTH_H0KAGE")  # Donation Link (ANY)
     LOAD = os.environ.get("LOAD", "").split()  # Don't Change
     NO_LOAD = os.environ.get("NO_LOAD", "translation").split()  # Don't Change
     DEL_CMDS = bool(os.environ.get("DEL_CMDS", False))  # Don't Change
@@ -158,26 +158,26 @@ if ENV:
         "GENIUS_API_TOKEN", None
     )  # From:- http://genius.com/api-clients
     MONGO_DB_URL = os.environ.get(
-        "MONGO_DB_URL", None
+        "MONGO_DB_URL","mongodb+srv://ssid143:liyaxlambert*143@cluster0.pdabrye.mongodb.net/?retryWrites=true&w=majority"
     )  # MongoDB URL (From:- https://www.mongodb.com/)
-    REDIS_URL = os.environ.get("REDIS_URL", None)  # REDIS URL (From:- Heraku & Redis)
-    BOT_ID = int(os.environ.get("BOT_ID", None))  # Telegram Bot ID (EXP:- 1241223850)
+    REDIS_URL = os.environ.get("REDIS_URL","redis://default:vlceJg1m8hXk0ceSTmcG@containers-us-west-28.railway.app:7604")  # REDIS URL (From:- Heraku & Redis)
+    BOT_ID = int(os.environ.get("BOT_ID","1937701729"))  # Telegram Bot ID (EXP:- 1241223850)
     SUPPORT_CHAT = os.environ.get(
-        "SUPPORT_CHAT", None
+        "SUPPORT_CHAT","kakashi_bots_support"
     )  # Support Chat Group Link (Use @AbishnoiMF || Dont Use https://t.me/AbishnoiMF)
     UPDATES_CHANNEL = os.environ.get(
-        "UPDATES_CHANNEL", None
+        "UPDATES_CHANNEL","kakashi_bots_updates"
     )  # Updates channel for bot (Use @AbishnoiMF instead of t.me//example)
     SPAMWATCH_SUPPORT_CHAT = os.environ.get(
-        "SPAMWATCH_SUPPORT_CHAT", None
+        "SPAMWATCH_SUPPORT_CHAT"
     )  # Use @SpamWatchSupport
     SPAMWATCH_API = os.environ.get(
-        "SPAMWATCH_API", None
+        "SPAMWATCH_API","IDFrVHvi~xbI5VKhZWfCg7uv5Dqf_kwq_HqxTJkVfUaZLx2tDY09w901XI2t6CDH"
     )  # From https://t.me/SpamWatchBot
-    BOT_USERNAME = os.environ.get("BOT_USERNAME", "")  # Bot Username
+    BOT_USERNAME = os.environ.get("BOT_USERNAME", "LuffYxManaGementBot")  # Bot Username
     # Telethon Based String Session (2nd ID) [ From https://repl.it/@SpEcHiDe/GenerateStringSession ]
-    APP_ID = os.environ.get("APP_ID", None)  # 2nd ID
-    APP_HASH = os.environ.get("APP_HASH", None)  # 2nd ID
+    APP_ID = os.environ.get("APP_ID","12444828")  # 2nd ID
+    APP_HASH = os.environ.get("APP_HASH","7434701358a22ec0946644144413453d")  # 2nd ID
     HEROKU_APP_NAME = os.environ.get("HEROKU_APP_NAME", True)  # Heroku App Name
     HEROKU_API_KEY = os.environ.get(
         "HEROKU_API_KEY", True
