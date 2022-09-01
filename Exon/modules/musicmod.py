@@ -1,5 +1,9 @@
 __help__ = """
 
+⍟ /play  `play a song on vc`
+
+⍟ /vplay  `play a video on vc`
+
 ⍟ /song [link] `ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ ᴍᴜsɪᴄ ғʀᴏᴍ ᴠᴀʀɪᴏᴜs ᴡᴇʙsɪᴛᴇs ɪɴᴄʟᴜᴅɪɴɢ ʏᴏᴜᴛᴜʙᴇ`
 
 ⍟ /song [query] `ᴛᴏ ᴅᴏᴡɴʟᴏᴀᴅ `
@@ -8,4 +12,4 @@ __help__ = """
 
 """
 
-__mod_name__ = "𝙼ᴜsɪᴄ"
+__mod_name__ = "𝙼ᴜsɪᴄ 🎶"
