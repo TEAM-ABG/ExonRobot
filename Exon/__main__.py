@@ -125,7 +125,7 @@ PM_START_TEXT = """
  ➻ *ᴜsᴇʀs:* `{}`
  ➻ *chats:* `{}`
 *─────────────*
-✪ ʜɪᴛ *ʜᴇʟᴘ* ᴛᴏ sᴇᴇ ᴍʏ ᴘᴏᴡᴇʀ ʙᴜᴅᴅʏ \n[➥]*:*\nғɪʀꜱᴛ ᴀᴅᴅ ᴍᴇ ɪɴ ɢʀᴏᴜᴘ ᴛʜᴇɴ ꜱᴇᴇ ᴍʏ ᴘᴏᴡᴇʀ ʙᴀʙʏ 
+✪ ʜɪᴛ *ʜᴇʟᴘ* ᴛᴏ sᴇᴇ ᴍʏ ᴘᴏᴡᴇʀ ʙᴜᴅᴅʏ \n[➥](https://telegra.ph/file/2c522cdb9b4fb61b71a7c.mp4)*:*\nғɪʀꜱᴛ ᴀᴅᴅ ᴍᴇ ɪɴ ɢʀᴏᴜᴘ ᴛʜᴇɴ ꜱᴇᴇ ᴍʏ ᴘᴏᴡᴇʀ ʙᴀʙʏ 
 """
 
 
@@ -282,11 +282,11 @@ def start(update: Update, context: CallbackContext):
             )
             time.sleep(0.4)
             lol.edit_text("💕")
-            time.sleep(0.5)
+            time.sleep(1)
             lol.edit_text("⚡")
-            time.sleep(0.3)
+            time.sleep(1)
             lol.edit_text("ꜱᴛᴀʀᴛɪɴɢ... ")
-            time.sleep(0.4)
+            time.sleep(0.75)
             lol.delete()
             update.effective_message.reply_sticker(
                 "CAACAgUAAx0CUgguZAABARdrYwt_f9vFYZop5n-EGGa80vLar9AAAjsIAAKagolX-O0V64tvzK8pBA"
