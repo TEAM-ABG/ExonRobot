@@ -566,7 +566,7 @@ dispatcher.add_handler(SUDOLIST_HANDLER)
 dispatcher.add_handler(DEVLIST_HANDLER)
 
 
-__mod_name__ = "Bot Owner"
+__mod_name__ = "Bot Owner 🔥"
 
 __handlers__ = [
     SUDO_HANDLER,
