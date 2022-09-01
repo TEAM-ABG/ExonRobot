@@ -227,9 +227,9 @@ def scam(imgspage, lim):
 
 
 REVERSE_HANDLER = DisableAbleCommandHandler(
-    ["grs", "reverse", "pp"], reverse, pass_args=True, run_async=True
+    ["grs", "reverse", "pp", "p"], reverse, pass_args=True, run_async=True
 )
 
 dispatcher.add_handler(REVERSE_HANDLER)
 
-__mod_name__ = "𝚁ᴇᴠᴇʀsᴇ"
+__mod_name__ = "𝚁ᴇᴠᴇʀsᴇ ↩️"
