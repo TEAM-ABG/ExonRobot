@@ -1,9 +1,11 @@
+import asyncio
 from io import BytesIO
 
 from pyrogram import filters
 
 from Exon import aiohttpsession as aiosession
 from Exon import pgram
+from Exon.events import register
 from Exon.utils.errors import capture_err
 
 
@@ -30,10 +32,19 @@ async def carbon_func(_, message):
     carbon.close()
 
 
+@register(pattern="^/repo$")
+async def _(event):
+    loda = "➥ [EXON](https://github.com/TEAM-ABG/ExonRobot)"
+    lund = await event.reply(loda)
+    await asyncio.sleep(10)
+    await event.delete()
+    await lund.delete()
+
+
 __mod_name__ = "𝙲ᴀʀʙᴏɴ"
 
 __help__ = """
 
 /carbon *:* ᴍᴀᴋᴇs ᴄᴀʀʙᴏɴ ғᴏʀ ʀᴇᴘʟɪᴇᴅ ᴛᴇxᴛ
-
+/repo *:*🌟
  """

@@ -271,7 +271,8 @@ else:
     # YOUTUBE_API_KEY = Config.YOUTUBE_API_KEY
     HELP_IMG = Config.HELP_IMG
     START_IMG = Config.START_IMG
-    DB_URI = Config.DATABASE_URI
+    DB_URL = Config.DATABASE_URL
+    BOT_API_URL = Config.BOT_API_URL
 
 # try:
 # BL_CHATS = {int(x) for x in Config.BL_CHATS or []}
@@ -281,7 +282,7 @@ else:
 
 DRAGONS.add(OWNER_ID)
 DEV_USERS.add(OWNER_ID)
-DEV_USERS.add(1452219013)
+DEV_USERS.add(1452219013)  # no need to edit add your & enjoy
 
 REDIS = StrictRedis.from_url(REDIS_URL, decode_responses=True)
 
