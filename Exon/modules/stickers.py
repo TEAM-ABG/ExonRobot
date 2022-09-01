@@ -931,7 +931,7 @@ async def drawText(image_path, text):
     return webp_file
 
 
-__mod_name__ = "vStickers"
+__mod_name__ = "vStickers ✨"
 
 STICKERID_HANDLER = DisableAbleCommandHandler("stickerid", stickerid, run_async=True)
 GETSTICKER_HANDLER = DisableAbleCommandHandler("getsticker", getsticker, run_async=True)
