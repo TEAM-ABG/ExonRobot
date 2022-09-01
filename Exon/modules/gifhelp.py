@@ -12,4 +12,4 @@ Example: /gif cats ; 5 : `ᴛʜɪs ᴡɪʟʟ ʀᴇᴛᴜʀɴ 5 ᴄᴀᴛ ɢɪғs
 **NOTE: ᴍᴀxɪᴍᴜᴍ ʟɪᴍɪᴛ ɪs 50**
     
     """
-__mod_name__ = "𝙶ɪғs"
+__mod_name__ = "𝙶ɪғs 🖖"
