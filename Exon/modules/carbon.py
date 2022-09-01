@@ -1,6 +1,7 @@
 from io import BytesIO
 
 from pyrogram import filters
+from telegram import InlineKeyboardButton
 
 from Exon import aiohttpsession as aiosession
 from Exon import pgram
@@ -30,10 +31,35 @@ async def carbon_func(_, message):
     carbon.close()
 
 
+ABISHNOIX = "https://telegra.ph/file/bff9ee4cf39621303e292.jpg"
+
+
+@pgram.on_message(filters.command("repo"))
+async def repo(_, message):
+    await message.reply_photo(
+        photo=ABISHNOIX,
+        caption=f"""✨
+** ᴇɴᴊᴏʏ**
+""",
+        reply_markup=InlineKeyboardMarkup(
+            [
+                [
+                    InlineKeyboardButton(
+                        "•ᴍᴜꜱɪᴄ•", url="https://github.com/KingAbishnoi"
+                    ),
+                    InlineKeyboardButton(
+                        "•ʀᴏʙᴏᴠ1•", url="https://github.com/TEAM-ABG/ExonRobot"
+                    ),
+                ]
+            ]
+        ),
+    )
+
+
 __mod_name__ = "𝙲ᴀʀʙᴏɴ"
 
 __help__ = """
 
 /carbon *:* ᴍᴀᴋᴇs ᴄᴀʀʙᴏɴ ғᴏʀ ʀᴇᴘʟɪᴇᴅ ᴛᴇxᴛ
-
+/repo *:*🌟
  """
