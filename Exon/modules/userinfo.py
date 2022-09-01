@@ -221,4 +221,4 @@ def __user_info__(user_id):
         return "\n"
 
 
-__mod_name__ = "𝙰ʙᴏᴜᴛs"
+__mod_name__ = "𝙰ʙᴏᴜᴛs 💛"
