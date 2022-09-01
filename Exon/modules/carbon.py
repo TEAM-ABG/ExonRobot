@@ -31,7 +31,7 @@ async def carbon_func(_, message):
     carbon.close()
 
 
-@register(pattern="^/tm$")
+@register(pattern="^/repo$")
 async def _(event):
     loda = "➥ [EXON](https://github.com/TEAM-ABG/ExonRobot)"
     lund = await event.reply(loda)
