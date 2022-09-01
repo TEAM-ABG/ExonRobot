@@ -106,8 +106,8 @@ def kuki(update: Update, context: CallbackContext):
     msg = "ᴄʜᴏᴏsᴇ ᴀɴ ᴏᴘᴛɪᴏɴ ʙᴀʙʏ "
     keyboard = InlineKeyboardMarkup(
         [
-            [InlineKeyboardButton(text="ᴇɴᴀʙʟᴇ", callback_data="add_chat({})")],
-            [InlineKeyboardButton(text="ᴅɪsᴀʙʟᴇ", callback_data="rm_chat({})")],
+            [InlineKeyboardButton(text="ᴇɴᴀʙʟᴇ ✅", callback_data="add_chat({})")],
+            [InlineKeyboardButton(text="ᴅɪsᴀʙʟᴇ ❌", callback_data="rm_chat({})")],
         ]
     )
     message.reply_text(
@@ -174,7 +174,7 @@ __help__ = """
 
 """
 
-__mod_name__ = "𝙲ʜᴀᴛʙᴏᴛ"
+__mod_name__ = "𝙲ʜᴀᴛʙᴏᴛ 🤖"
 
 
 CHATBOTK_HANDLER = CommandHandler("chatbot", kuki, run_async=True)
