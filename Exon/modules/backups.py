@@ -387,7 +387,7 @@ def get_chat(chat_id, chat_data):
         return {"status": False, "value": False}
 
 
-__mod_name__ = "𝙱ᴀᴄᴋᴜᴘs"
+__mod_name__ = "𝙱ᴀᴄᴋᴜᴘs ✨"
 
 __help__ = """
 *ᴏɴʟʏ ғᴏʀ ɢʀᴏᴜᴘ ᴏᴡɴᴇʀ:*
