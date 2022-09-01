@@ -42,30 +42,30 @@ class Config(object):
     # REQUIRED
     # Login to https://my.telegram.org and fill in these slots with the details given by it
 
-    TOKEN = "TOKEN" 
-    OWNER_ID = "OWNER_ID" 
-    JOIN_LOGGER = "" 
-    OWNER_USERNAME = "" 
-    ALLOW_CHATS = "" 
-    DRAGONS = "" 
-    DEV_USERS = "" 
-    DEMONS = "" 
-    WOLVES = "" 
-    TIGERS = "" 
-    INFOPIC = "INFOPIC" 
-    EVENT_LOGS = "" 
-    ERROR_LOGS = "" 
-    WEBHOOK = "" 
-    URL = "" 
-    PORT = "" 
-    CERT_PATH = "" 
+    TOKEN = "TOKEN"
+    OWNER_ID = "OWNER_ID"
+    JOIN_LOGGER = ""
+    OWNER_USERNAME = ""
+    ALLOW_CHATS = ""
+    DRAGONS = ""
+    DEV_USERS = ""
+    DEMONS = ""
+    WOLVES = ""
+    TIGERS = ""
+    INFOPIC = "INFOPIC"
+    EVENT_LOGS = ""
+    ERROR_LOGS = ""
+    WEBHOOK = ""
+    URL = ""
+    PORT = ""
+    CERT_PATH = ""
     API_ID = "API_ID"
     API_HASH = ".API_HASH"
     ARQ_API_URL = "ARQ_API_URL"
     ARQ_API_KEY = "ARQ_API_KEY"
-    DB_URL = "DB_URL" 
+    DB_URL = "DB_URL"
     DB_URL2 = "DB_URL2"
-    DONATION_LINK = "DONATION_LINK" 
+    DONATION_LINK = "DONATION_LINK"
     STRICT_GBAN = ".STRICT_GBAN"
     WORKERS = ".WORKERS"
     BAN_STICKER = "BAN_STICKER"
@@ -89,8 +89,7 @@ class Config(object):
     GENIUS_API_TOKEN = "GENIUS_API_TOKEN"
     # YOUTUBE_API_KEY = Config.YOUTUBE_API_KEY
     HELP_IMG = ".HELP_IMG"
-    START_IMG = "" 
-    
+    START_IMG = ""
 
 
 class Production(Config):
@@ -101,6 +100,4 @@ class Development(Config):
     LOGGER = True
 
 
-#NO NEED EDIT 
-
-
+# NO NEED EDIT
