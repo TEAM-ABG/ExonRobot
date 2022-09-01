@@ -169,7 +169,7 @@ If ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ᴜsᴇ ᴛʜᴇsᴇ ᴄʜᴀʀᴀᴄᴛᴇʀs, �
     telegram.MAX_MESSAGE_LENGTH,
 )
 
-__mod_name__ = "𝚁ᴇɢᴇx"
+__mod_name__ = "𝚁ᴇɢᴇx 🌞"
 
 SED_HANDLER = DisableAbleMessageHandler(
     Filters.regex(r"s([{}]).*?\1.*".format("".join(DELIMITERS))),
