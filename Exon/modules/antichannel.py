@@ -76,7 +76,7 @@ def eliminate_channel(update: Update, context: CallbackContext):
         bot.ban_chat_sender_chat(sender_chat_id=sender_chat.id, chat_id=chat.id)
 
 
-__mod_name__ = "𝙰ɴᴛɪ-ᴄʜᴀɴɴᴇʟ"
+__mod_name__ = "𝙰ɴᴛɪ-ᴄʜᴀɴɴᴇʟ 👹"
 
 __help__ = """
  
