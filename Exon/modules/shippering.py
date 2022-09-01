@@ -100,4 +100,4 @@ __ɴᴇᴡ ᴄᴏᴜᴘʟᴇ ᴏғ ᴛʜᴇ ᴅᴀʏ ᴍᴀʏ ʙᴇ ᴄʜᴏsᴇ
         await message.reply_text(e)
 
 
-__mod_name__ = "𝙲ᴏᴜᴘʟᴇs"
+__mod_name__ = "𝙲ᴏᴜᴘʟᴇs 💕"
