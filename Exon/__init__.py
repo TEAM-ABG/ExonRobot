@@ -321,6 +321,9 @@ print("[Exon]: ᴛᴇʟᴇɢʀᴀᴘʜ ɪɴsᴛᴀʟʟɪɴɢ")
 telegraph = Telegraph()
 print("[EXON ]: ᴛᴇʟᴇɢʀᴀᴘʜ ᴀᴄᴄᴏᴜɴᴛ ᴄʀᴇᴀᴛɪɴɢ")
 telegraph.create_account(short_name="Exon")
+updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True
+
+"""                     
 updater = tg.Updater(
     token=TOKEN,
     base_url=BOT_API_URL,
@@ -328,6 +331,8 @@ updater = tg.Updater(
     request_kwargs={"read_timeout": 10, "connect_timeout": 10},
     use_context=True,
 )
+"""
+
 print("[EXON ]: ᴛᴇʟᴇᴛʜᴏɴ ᴄʟɪᴇɴᴛ sᴛᴀʀᴛɪɴɢ")
 telethn = TelegramClient(MemorySession(), API_ID, API_HASH)
 
