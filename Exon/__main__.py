@@ -144,7 +144,7 @@ buttons = [
     [
         InlineKeyboardButton(text=" ᴄᴏᴍᴍᴀɴᴅs", callback_data="help_back"),
         InlineKeyboardButton(
-            text="sᴏᴜʀᴄᴇ 🌐", url="https://github.com/TEAM-ABG/ExonRobot"
+            text="ᴅᴏɴᴀᴛᴇ ❤️", url="https://paypal.me/LastRaj"
         ),
     ],
     [
@@ -281,7 +281,7 @@ def start(update: Update, context: CallbackContext):
                 PM_START_TEX.format(usr.first_name), parse_mode=ParseMode.MARKDOWN
             )
             time.sleep(0.4)
-            lol.edit_text("🎊")
+            lol.edit_text("😈")
             time.sleep(0.5)
             lol.edit_text("⚡")
             time.sleep(0.3)
