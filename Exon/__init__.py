@@ -321,7 +321,7 @@ print("[Exon]: ᴛᴇʟᴇɢʀᴀᴘʜ ɪɴsᴛᴀʟʟɪɴɢ")
 telegraph = Telegraph()
 print("[EXON ]: ᴛᴇʟᴇɢʀᴀᴘʜ ᴀᴄᴄᴏᴜɴᴛ ᴄʀᴇᴀᴛɪɴɢ")
 telegraph.create_account(short_name="Exon")
-updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True
+updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True) 
 
 #"""                     
 #updater = tg.Updater(
