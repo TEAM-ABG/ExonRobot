@@ -95,19 +95,19 @@ def paginate_modules(page_n: int, module_dict: Dict, prefix, chat=None) -> List:
             ]
         )
 
-    pairs = [modules[i * 2 : (i + 1) * 2] for i in range((len(modules) + 2 - 1) // 2)]
+    pairs = [modules[i * 3 : (i + 1) * 3] for i in range((len(modules) + 3 - 1) // 3)]
 
-    round_num = len(modules) / 2
+    round_num = len(modules) / 3
     calc = len(modules) - round(round_num)
     if calc in [1, 2]:
         pairs.append((modules[-1],))
 
-    max_num_pages = ceil(len(pairs) / 10)
+    max_num_pages = ceil(len(pairs) / 8)
     modulo_page = page_n % max_num_pages
 
     # can only have a certain amount of buttons side by side
     if len(pairs) > 3:
-        pairs = pairs[modulo_page * 10 : 10 * (modulo_page + 1)] + [
+        pairs = pairs[modulo_page * 8 : 8 * (modulo_page + 1)] + [
             (
                 EqInlineKeyboardButton(
                     "⬅️", callback_data="{}_prev({})".format(prefix, modulo_page)
