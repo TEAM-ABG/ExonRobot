@@ -71,7 +71,7 @@ pyrogram==1.4.16
 python-arq
 python-dotenv
 python-rapidjson
-python-telegram-bot==13.13
+python-telegram-bot==13.14
 pytimeparse
 pytube
 pytz
