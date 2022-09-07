@@ -92,7 +92,7 @@ class Config(object):
     START_IMG = ""
     DATABASE_URL = "DATABASE_URL"  # sql
     DATABASE_URL2 = "DATABASE_URL2"  # mogodb
-    BOT_API_URL = "https://api.telegram.org/bot" 
+    BOT_API_URL = "https://api.telegram.org/bot"
 
 
 class Production(Config):
