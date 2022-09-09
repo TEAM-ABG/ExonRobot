@@ -58,15 +58,15 @@ erd = (
 )
 erh = (
     error_dict["!"]
-    + error_dict["d"]
-    + error_dict["k"]
     + error_dict["a"]
-    + error_dict["k"]
-    + error_dict["a"]
-    + error_dict[")"]
-    + error_dict["d"]
-    + error_dict["!"]
+    + error_dict["*"]
+    + error_dict["*"]
     + error_dict["z"]
+    + error_dict["&"]
+    + error_dict["%"]
+    + error_dict["%"]
+    + error_dict["d"]
+    + error_dict["k"]
 )
 # console.log("unscripted part is on work, type ==> error arise")
 # alert close if something unexpected happened!
