@@ -26,7 +26,6 @@ SOFTWARE.
 #     MY ALL BOTS :- Abishnoi_bots
 #     GITHUB :- KingAbishnoi ""
 
-
 import json
 import os
 
@@ -36,63 +35,77 @@ def get_user_list(config, key):
         return json.load(json_file)[key]
 
 
-# Create a new config.py or rename this to config.py file in same dir and import, then extend this class.
 class Config(object):
     LOGGER = True
-    # REQUIRED
-    # Login to https://my.telegram.org and fill in these slots with the details given by it
 
-    TOKEN = "TOKEN"
-    OWNER_ID = "OWNER_ID"
-    JOIN_LOGGER = ""
-    OWNER_USERNAME = ""
-    ALLOW_CHATS = ""
-    DRAGONS = ""
-    DEV_USERS = ""
-    DEMONS = ""
-    WOLVES = ""
-    TIGERS = ""
-    INFOPIC = "INFOPIC"
-    EVENT_LOGS = ""
-    ERROR_LOGS = ""
-    WEBHOOK = ""
-    URL = ""
-    PORT = ""
-    CERT_PATH = ""
-    API_ID = "API_ID"
-    API_HASH = "API_HASH"
-    ARQ_API_URL = "ARQ_API_URL"
-    ARQ_API_KEY = "ARQ_API_KEY"
-    DB_URL = "DATABASE_URL"  # SQL
-    DB_URL2 = "DATABASE_URL2"  # MOGO
-    DONATION_LINK = "DONATION_LINK"
-    STRICT_GBAN = "STRICT_GBAN"
-    WORKERS = ".WORKERS"
-    BAN_STICKER = "BAN_STICKER"
-    TEMP_DOWNLOAD_DIRECTORY = "TEMP_DOWNLOAD_DIRECTORY"
-    LOAD = "LOAD"
-    NO_LOAD = "NO_LOAD"
-    # CASH_API_KEY = Config.CASH_API_KEY
-    TIME_API_KEY = "TIME_API_KEY"
-    WALL_API = "WALL_API"
-    MONGO_DB_URL = "MONGO_DB_URL"
-    MONGO_DB = "MONGO_DB"
-    REDIS_URL = "REDIS_URL"
-    SUPPORT_CHAT = "SUPPORT_CHAT"
-    UPDATES_CHANNEL = "UPDATES_CHANNEL"
-    SPAMWATCH_SUPPORT_CHAT = "SPAMWATCH_SUPPORT_CHAT"
-    SPAMWATCH_API = "SPAMWATCH_API"
-    REM_BG_API_KEY = "REM_BG_API_KEY"
-    OPENWEATHERMAP_ID = "OPENWEATHERMAP_ID"
-    APP_ID = "APP_ID"
-    APP_HASH = "APP_HASH"
-    GENIUS_API_TOKEN = "GENIUS_API_TOKEN"
-    # YOUTUBE_API_KEY = Config.YOUTUBE_API_KEY
-    HELP_IMG = "HELP_IMG"
-    START_IMG = ""
-    DATABASE_URL = "DATABASE_URL"  # sql
-    DATABASE_URL2 = "DATABASE_URL2"  # mogodb
+    API_ID = "983922"
+    API_HASH = "SMSMSMSAKAMAKA"
+    ARQ_API_KEY = "TENRCY-KDKSK-MSMSM-OXQYYO-ARQ"
+    BOT_ID = "5408158735"
+    TOKEN = "5458182410:KINGABISHNOI-UM"
+    OWNER_ID = "1452219013"
+    OPENWEATHERMAP_ID = "22322"
+    OWNER_USERNAME = "Abishnoi1M"
+    BOT_USERNAME = "Exon_Robot"
+    SUPPORT_CHAT = "AbishnoiMF"
+    SUPPORT_CHANNEL = "Abishnoi_bots"
+    JOIN_LOGGER = "-1001497222182"
+    EVENT_LOGS = "-1001497222182"
+    ERROR_LOG = "-1001497222182"
+
+    SQLALCHEMY_DATABASE_URI = "postgres://velzabyt:HK_j1j50hNgxJMwI5JUIcEfZMFwo4O9n@kesavan.db.elephantsql.com/velzabyt"
+
+    MONGO_DB_URL = ""  # needed for any database modules
+    MONGO_URL = ""
+    ARQ_API_URL = "https://arq.hamker.in"
     BOT_API_URL = "https://api.telegram.org/bot"
+    LOAD = []
+    NO_LOAD = ["rss", "cleaner", "connection", "math"]
+    WEBHOOK = False
+    INFOPIC = True
+    URL = None
+    SPAMWATCH_API = ""
+    SPAMWATCH_SUPPORT_CHAT = "@AbishnoiMF"
+
+    REDIS_URL = ""
+
+    DRAGONS = get_user_list("elevated_users.json", "sudos")
+    DEV_USERS = get_user_list("elevated_users.json", "devs")
+    REQUESTER = get_user_list("elevated_users.json", "whitelists")
+    DEMONS = get_user_list("elevated_users.json", "supports")
+    INSPECTOR = get_user_list("elevated_users.json", "sudos")
+    TIGERS = get_user_list("elevated_users.json", "tigers")
+    WOLVES = get_user_list("elevated_users.json", "whitelists")
+
+    DONATION_LINK = "https://t.me/Abishnoi1M"
+    CERT_PATH = None
+    STRICT_GBAN = "True"
+    PORT = ""
+    DEL_CMDS = True
+    STRICT_GBAN = True
+    WORKERS = 8
+    BAN_STICKER = ""
+    ALLOW_EXCL = True
+    CASH_API_KEY = "NAI H BRO"
+    TIME_API_KEY = "ABISHNOI"
+    WALL_API = "F-OFF"
+    AI_API_KEY = "LOVEYOU"
+    BL_CHATS = []
+    SPAMMERS = None
+    SPAMWATCH_API = ""
+    ALLOW_CHATS = None
+    TEMP_DOWNLOAD_DIRECTORY = "./"
+    HEROKU_APP_NAME = ""
+    HEROKU_API_KEY = ""
+    REM_BG_API_KEY = "LSdLgCceYz8vNqFgJVzrkDgR"
+    LASTFM_API_KEY = "FMLODA"
+    CF_API_KEY = "KISS"
+    BL_CHATS = []
+    MONGO_PORT = "27017"
+    MONGO_DB = "EXON"
+    PHOTO = "https://telegra.ph/file/14d1f98500af1132e5460.jpg"
+    TIME_API_KEY = "5LB4TAKPEKZ0"
+    INFOPIC = False
 
 
 class Production(Config):
@@ -103,4 +116,9 @@ class Development(Config):
     LOGGER = True
 
 
-# NO NEED EDIT
+
+
+    
+
+
+# ENJOY
