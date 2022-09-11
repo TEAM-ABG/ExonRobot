@@ -23,7 +23,6 @@ SOFTWARE.
 #     GITHUB :- KingAbishnoi ""
 
 
-
 import asyncio
 
 from telethon import events
