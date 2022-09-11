@@ -53,7 +53,7 @@ class Config(object):
     EVENT_LOGS = "-1001497222182"
     ERROR_LOG = "-1001497222182"
 
-    SQLALCHEMY_DATABASE_URI = "postgres://velzabyt:HK_j1j50hNgxJMwI5JUIcEfZMFwo4O9n@kesavan.db.elephantsql.com/velzabyt"
+    SQLALCHEMY_DATABASE_URI = ""
 
     MONGO_DB_URL = ""  # needed for any database modules
     MONGO_URL = ""
