@@ -837,7 +837,7 @@ def adminlist(update, context):
                 )
             )
 
-        if status == "ᴀᴅᴍɪɴɪsᴛʀᴀᴛᴏʀ":
+        if status == "administrator":
             if custom_title:
                 try:
                     custom_admin_list[custom_title].append(name)
