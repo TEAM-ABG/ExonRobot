@@ -819,9 +819,6 @@ def adminlist(update, context):
 
     text += "\n 🎖 𝗔𝗱𝗺𝗶𝗻𝗶𝘀𝘁𝗿𝗮𝘁𝗼𝗿𝘀"
 
-    custom_admin_list = {}
-    normal_admin_list = []
-
 
 @connection_status
 def adminlist(update, context):
@@ -834,7 +831,7 @@ def adminlist(update, context):
         send_message(update.effective_message, "This command only works in Groups.")
         return
 
-    chat = update.effective_chat
+    update.effective_chat
     chat_id = update.effective_chat.id
     chat_name = update.effective_message.chat.title  # -> unused variable
 
@@ -864,17 +861,14 @@ def adminlist(update, context):
             name = "{}".format(
                 mention_html(
                     user.id,
-                    html.escape(
-                        f"{user.first_name} " + ((user.last_name or ""))
-                    ),
+                    html.escape(f"{user.first_name} " + ((user.last_name or ""))),
                 )
             )
 
-
-                        ##if user.is_bot:
-                            #bot_admin_list.append(name)
-                    #administrators.remove(admin)
-                    #continue
+            ##if user.is_bot:
+            # bot_admin_list.append(name)
+            # administrators.remove(admin)
+            # continue
 
         #   continue
 
@@ -903,9 +897,7 @@ def adminlist(update, context):
             name = "{}".format(
                 mention_html(
                     user.id,
-                    html.escape(
-                        f"{user.first_name} " + ((user.last_name or ""))
-                    ),
+                    html.escape(f"{user.first_name} " + ((user.last_name or ""))),
                 )
             )
 
@@ -934,25 +926,25 @@ def adminlist(update, context):
             text += f"\n<code> • </code>{admin}"
         text += "\n"
 
-            #text += "\n🤖 Bots:"
-            #for each_bot in bot_admin_list:
-            #text += "\n<code> • </code>{}".format(each_bot)
+        # text += "\n🤖 Bots:"
+        # for each_bot in bot_admin_list:
+        # text += "\n<code> • </code>{}".format(each_bot)
 
     try:
         msg.edit_text(text, parse_mode=ParseMode.HTML)
     except BadRequest:  # if original message is deleted
         return
 
-#if user.is_bot:
 
-            #bot_admin_list.append(name)
+# if user.is_bot:
 
-          #  administrators.remove(admin)
+# bot_admin_list.append(name)
 
-#text += "Bottos:"
+#  administrators.remove(admin)
 
-    #for each_bot in bot_admin_list:
+# text += "Bottos:"
 
+# for each_bot in bot_admin_list:
 
 
 @user_admin
