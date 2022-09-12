@@ -822,18 +822,90 @@ def adminlist(update, context):
     custom_admin_list = {}
     normal_admin_list = []
 
+
+@connection_status
+def adminlist(update, context):
+    chat = update.effective_chat  ## type: Optional[Chat] -> unused variable
+    user = update.effective_user  # type: Optional[User]
+    args = context.args  # -> unused variable
+    bot = context.bot
+
+    if update.effective_message.chat.type == "private":
+        send_message(update.effective_message, "This command only works in Groups.")
+        return
+
+    chat = update.effective_chat
+    chat_id = update.effective_chat.id
+    chat_name = update.effective_message.chat.title  # -> unused variable
+
+    try:
+        msg = update.effective_message.reply_text(
+            "ғᴇᴛᴄʜɪɴɢ group ᴀᴅᴍɪɴs...",
+            parse_mode=ParseMode.HTML,
+        )
+    except BadRequest:
+        msg = update.effective_message.reply_text(
+            "ғᴇᴛᴄʜɪɴɢ ɢʀᴏᴜᴘ ᴀᴅᴍɪɴs...",
+            quote=False,
+            parse_mode=ParseMode.HTML,
+        )
+
+    administrators = bot.getChatAdministrators(chat_id)
+    text = f"ᴀᴅᴍɪɴs ɪɴ <b>{html.escape(update.effective_chat.title)}</b>:"
+
     for admin in administrators:
         user = admin.user
         status = admin.status
         custom_title = admin.custom_title
 
         if user.first_name == "":
-            name = "☠ ᴅᴇʟᴇᴛᴇᴅ ᴀᴄᴄᴏᴜɴᴛ \n"
+            name = "☠ Deleted Account"
         else:
             name = "{}".format(
                 mention_html(
                     user.id,
-                    html.escape(f"{user.first_name} " + ((user.last_name or ""))),
+                    html.escape(
+                        f"{user.first_name} " + ((user.last_name or ""))
+                    ),
+                )
+            )
+
+
+                        ##if user.is_bot:
+                            #bot_admin_list.append(name)
+                    #administrators.remove(admin)
+                    #continue
+
+        #   continue
+
+        # if user.username:
+        #    name = escape_markdown("@" + user.username)
+        if status == "creator":
+            text += "\n\n 🌐 ᴄʀᴇᴀᴛᴏʀ:"
+            text += f" {name}\n"
+
+            if custom_title:
+                text += f"<code> ┗━ {html.escape(custom_title)}</code>\n"
+
+    text += "\n 🎖 ᴀᴅᴍɪɴɪsᴛʀᴀᴛᴏʀs"
+
+    custom_admin_list = {}
+    normal_admin_list = []
+
+    for admin in administrators:
+        user = admin.user
+        status = admin.status
+        custom_title = admin.custom_title
+
+        if user.first_name == "":
+            name = "☠ Deleted Account"
+        else:
+            name = "{}".format(
+                mention_html(
+                    user.id,
+                    html.escape(
+                        f"{user.first_name} " + ((user.last_name or ""))
+                    ),
                 )
             )
 
@@ -847,7 +919,7 @@ def adminlist(update, context):
                 normal_admin_list.append(name)
 
     for admin in normal_admin_list:
-        text += f"\n<code> • </code>{admin}\n"
+        text += f"\n<code> • </code>{admin}"
 
     for admin_group in custom_admin_list.copy():
         if len(custom_admin_list[admin_group]) == 1:
@@ -862,25 +934,25 @@ def adminlist(update, context):
             text += f"\n<code> • </code>{admin}"
         text += "\n"
 
-        # text += "\n🤖 Bots:"
-        # for each_bot in bot_admin_list:
-        # text += "\n<code> • </code>{}".format(each_bot)
+            #text += "\n🤖 Bots:"
+            #for each_bot in bot_admin_list:
+            #text += "\n<code> • </code>{}".format(each_bot)
 
     try:
         msg.edit_text(text, parse_mode=ParseMode.HTML)
     except BadRequest:  # if original message is deleted
         return
 
+#if user.is_bot:
 
-# if user.is_bot:
+            #bot_admin_list.append(name)
 
-# bot_admin_list.append(name)
+          #  administrators.remove(admin)
 
-#  administrators.remove(admin)
+#text += "Bottos:"
 
-# text += "Bottos:"
+    #for each_bot in bot_admin_list:
 
-# for each_bot in bot_admin_list:
 
 
 @user_admin
