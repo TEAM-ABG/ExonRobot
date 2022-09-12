@@ -756,8 +756,6 @@ def invite(update: Update, context: CallbackContext):
         )
 
 
-
-
 @connection_status
 def adminlist(update, context):
     chat = update.effective_chat  ## type: Optional[Chat] -> unused variable
