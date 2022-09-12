@@ -756,68 +756,6 @@ def invite(update: Update, context: CallbackContext):
         )
 
 
-@connection_status
-def adminlist(update, context):
-    chat = update.effective_chat  ## type: Optional[Chat] -> unused variable
-    user = update.effective_user  # type: Optional[User]
-    args = context.args  # -> unused variable
-    bot = context.bot
-
-    if update.effective_message.chat.type == "private":
-        send_message(update.effective_message, "ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ᴏɴʟʏ ᴡᴏʀᴋs ɪɴ ɢʀᴏᴜᴘs.")
-        return
-
-    update.effective_chat
-    chat_id = update.effective_chat.id
-    chat_name = update.effective_message.chat.title  # -> unused variable
-
-    try:
-        msg = update.effective_message.reply_text(
-            "ғᴇᴛᴄʜɪɴɢ ɢʀᴏᴜᴘ ᴀᴅᴍɪɴs...",
-            parse_mode=ParseMode.HTML,
-        )
-    except BadRequest:
-        msg = update.effective_message.reply_text(
-            "ғᴇᴛᴄʜɪɴɢ ɢʀᴏᴜᴘ ᴀᴅᴍɪɴs...",
-            quote=False,
-            parse_mode=ParseMode.HTML,
-        )
-
-    administrators = bot.getChatAdministrators(chat_id)
-    text = f"ᴀᴅᴍɪɴs ɪɴ <b>{html.escape(update.effective_chat.title)}</b>:"
-
-    for admin in administrators:
-        user = admin.user
-        status = admin.status
-        custom_title = admin.custom_title
-
-        if user.first_name == "":
-            name = "☠ ᴅᴇʟᴇᴛᴇᴅ ᴀᴄᴄᴏᴜɴᴛ"
-        else:
-            name = "{}".format(
-                mention_html(
-                    user.id,
-                    html.escape(f"{user.first_name} " + ((user.last_name or ""))),
-                )
-            )
-
-            ##if user.is_bot:
-            # bot_admin_list.append(name)
-            # administrators.remove(admin)
-            # continue
-
-        #   continue
-
-        # if user.username:
-        #    name = escape_markdown("@" + user.username)
-        if status == "creator":
-            text += "\n\n👑𝗖𝗿𝗲𝗮𝘁𝗼𝗿 \n:"
-            text += f" {name}\n"
-
-            if custom_title:
-                text += f"<code> ┗━ {html.escape(custom_title)}</code>\n"
-
-    text += "\n 🎖 𝗔𝗱𝗺𝗶𝗻𝗶𝘀𝘁𝗿𝗮𝘁𝗼𝗿𝘀"
 
 
 @connection_status
