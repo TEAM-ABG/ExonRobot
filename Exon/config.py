@@ -108,6 +108,7 @@ class Config(object):
     MONGO_PORT = "27017"
     MONGO_DB = "EXON"
     PHOTO = "https://telegra.ph/file/14d1f98500af1132e5460.jpg"
+    HELP_IMG = "https://telegra.ph/file/14d1f98500af1132e5460.jpg
     TIME_API_KEY = "5LB4TAKPEKZ0"
     INFOPIC = False
     GENIUS_API_TOKEN = "28jwoKAkskaSjsnsksAjnwjUJwj"
