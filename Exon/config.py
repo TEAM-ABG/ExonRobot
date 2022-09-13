@@ -40,6 +40,8 @@ class Config(object):
 
     API_ID = "983922"
     API_HASH = "SMSMSMSAKAMAKA"
+    APP_ID = "953922"
+    APP_HASH = "funssnAjsjaSJns82AjajU" 
     ARQ_API_KEY = "TENRCY-KDKSK-MSMSM-OXQYYO-ARQ"
     BOT_ID = "5408158735"
     TOKEN = "5458182410:KINGABISHNOI-UM"
@@ -108,7 +110,7 @@ class Config(object):
     PHOTO = "https://telegra.ph/file/14d1f98500af1132e5460.jpg"
     TIME_API_KEY = "5LB4TAKPEKZ0"
     INFOPIC = False
-
+    GENIUS_API_TOKEN = "28jwoKAkskaSjsnsksAjnwjUJwj" 
 
 class Production(Config):
     LOGGER = True
