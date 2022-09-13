@@ -57,6 +57,7 @@ class Config(object):
 
     MONGO_DB_URL = ""  # needed for any database modules
     MONGO_URL = ""
+    DB_URL2 = ""  # YOUR MONGO_DB_URI 
     ARQ_API_URL = "https://arq.hamker.in"
     BOT_API_URL = "https://api.telegram.org/bot"
     LOAD = []
