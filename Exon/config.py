@@ -48,7 +48,7 @@ class Config(object):
     OWNER_USERNAME = "Abishnoi1M"
     BOT_USERNAME = "Exon_Robot"
     SUPPORT_CHAT = "AbishnoiMF"
-    UPDATES_CHANNEL = "Abishnoi_bots" 
+    UPDATES_CHANNEL = "Abishnoi_bots"
     SUPPORT_CHANNEL = "Abishnoi_bots"
     JOIN_LOGGER = "-1001497222182"
     EVENT_LOGS = "-1001497222182"
