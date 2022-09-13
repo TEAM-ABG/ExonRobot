@@ -244,7 +244,7 @@ else:
     API_HASH = Config.API_HASH
     ARQ_API_URL = Config.ARQ_API_URL
     ARQ_API_KEY = Config.ARQ_API_KEY
-    DB_URL = Config.DB_URL
+    DB_URL = Config.SQLALCHEMY_DATABASE_URI
     DB_URL2 = Config.DB_URL2
     DONATION_LINK = Config.DONATION_LINK
     STRICT_GBAN = Config.STRICT_GBAN
