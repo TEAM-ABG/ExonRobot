@@ -40,8 +40,8 @@ class Config(object):
 
     API_ID = "983922"
     API_HASH = "SMSMSMSAKAMAKA"
-    API_ID2 = "953922"
-    API_HASH2 = "funssnAjsjaSJns82AjajU"
+    APP_ID = "953922" # 2nd API_ID 
+    APP_HASH = "funssnAjsjaSJns82AjajU" # 2ns API_HASH 
     ARQ_API_KEY = "TENRCY-KDKSK-MSMSM-OXQYYO-ARQ"
     BOT_ID = "5408158735"
     TOKEN = "5458182410:KINGABISHNOI-UM"
@@ -108,7 +108,7 @@ class Config(object):
     MONGO_PORT = "27017"
     MONGO_DB = "EXON"
     PHOTO = "https://telegra.ph/file/14d1f98500af1132e5460.jpg"
-    HELP_IMG = "https://telegra.ph/file/14d1f98500af1132e5460.jpg
+    HELP_IMG = "https://telegra.ph/file/14d1f98500af1132e5460.jpg" 
     START_IMG = "https://telegra.ph/file/14d1f98500af1132e5460.jpg" 
     TIME_API_KEY = "5LB4TAKPEKZ0"
     INFOPIC = False
