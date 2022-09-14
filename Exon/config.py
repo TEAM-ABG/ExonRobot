@@ -40,8 +40,8 @@ class Config(object):
 
     API_ID = "983922"
     API_HASH = "SMSMSMSAKAMAKA"
-    APP_ID = "953922"
-    APP_HASH = "funssnAjsjaSJns82AjajU"
+    API_ID2 = "953922"
+    API_HASH2 = "funssnAjsjaSJns82AjajU"
     ARQ_API_KEY = "TENRCY-KDKSK-MSMSM-OXQYYO-ARQ"
     BOT_ID = "5408158735"
     TOKEN = "5458182410:KINGABISHNOI-UM"
@@ -57,7 +57,7 @@ class Config(object):
     ERROR_LOGS = "-1001497222182"
 
     SQLALCHEMY_DATABASE_URI = ""
-
+    DB_URL = "" 
     MONGO_DB_URL = ""  # needed for any database modules
     MONGO_URL = ""
     DB_URL2 = ""  # YOUR MONGO_DB_URI
