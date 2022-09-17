@@ -63,7 +63,7 @@ async def live(client: Client, message: Message):
             # editing chat_id and message id
             await pgram.edit_message_text(
                 chat_id={EVENT_LOGS},  # hear your channel id
-                message_id=1,  # Channel msg id
+                message_id=20,  # Channel msg id
                 text=captionk,
                 disable_web_page_preview=True,
             )
