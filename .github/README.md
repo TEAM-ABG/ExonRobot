@@ -77,4 +77,5 @@ _**ᴀᴠᴀɪʟᴀʙʟᴇ ᴏɴ ᴛᴇʟᴇɢʀᴀᴍ ᴀs [ᴇxᴏɴ ✘ ʀᴏ
 ➥ [𝐈ɢɴɪᴛᴇᴛᴇᴄʜ𝐔ᴘᴅᴀᴛᴇs] × <a href="https://t.me/IgniteTechDivision" alt="Ignitetech"> <img src="https://img.shields.io/badge/HW-90302f?logo=github" /></a>  
 
 
+➥ [𝐇ᴡ𝐑ᴇᴘᴏ] × <a href="https://github.com/ArshCypherZ/HWBot" alt="Ignitetech"> <img src="https://img.shields.io/badge/HWREPO-90302f?logo=github" /></a>  
 ━━━━━━━━━━━━━━━━━━━━
