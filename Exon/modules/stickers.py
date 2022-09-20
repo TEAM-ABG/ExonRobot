@@ -41,7 +41,7 @@ from telegram import (
 )
 from telegram.ext import CallbackContext, CallbackQueryHandler
 from telegram.utils.helpers import mention_html
-from Exon import telethn as bot
+
 from ABG.covert import convert_gif
 from Exon import dispatcher
 from Exon import telethn as bot
