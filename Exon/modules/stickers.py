@@ -931,7 +931,26 @@ async def drawText(image_path, text):
     return webp_file
 
 
-__mod_name__ = "vStickers"
+__mod_name__ = "𝚂ᴛɪᴄᴋᴇʀ"
+
+__help__ = """
+*ʜᴇʟᴘ ᴍᴇɴᴜ ғᴏʀ ꜱᴛɪᴄᴋᴇʀꜱ ᴛᴏᴏʟꜱ*
+
+•➥ /stickerid*:* `ʀᴇᴘʟʏ ᴛᴏ ᴀ ꜱᴛɪᴄᴋᴇʀ ᴛᴏ ᴍᴇ ᴛᴏ ᴛᴇʟʟ ʏᴏᴜ ɪᴛꜱ ғɪʟᴇ ɪᴅ`.
+
+•➥ /getsticker*:* `ʀᴇᴘʟʏ ᴛᴏ ᴀ ꜱᴛɪᴄᴋᴇʀ ᴛᴏ ᴍᴇ ᴛᴏ ᴜᴘʟᴏᴀᴅ ɪᴛꜱ ʀᴀᴡ ᴘɴɢ ғɪʟᴇ.`
+
+•➥ /kang*:* `ʀᴇᴘʟʏ ᴛᴏ ᴀ ꜱᴛɪᴄᴋᴇʀ ᴛᴏ ᴀᴅᴅ ɪᴛ ᴛᴏ ʏᴏᴜʀ ᴘᴀᴄᴋ`.
+
+•➥ /delsticker*:* `ʀᴇᴘʟʏ ᴛᴏ ʏᴏᴜʀ ᴀɴɪᴍᴇ ᴇxɪꜱᴛ ꜱᴛɪᴄᴋᴇʀ ᴛᴏ ʏᴏᴜʀ ᴘᴀᴄᴋ ᴛᴏ ᴅᴇʟᴇᴛᴇ ɪᴛ.`
+
+•➥ /stickers*:* `ғɪɴᴅ ꜱᴛɪᴄᴋᴇʀꜱ ғᴏʀ ɢɪᴠᴇɴ ᴛᴇʀᴍ ᴏɴ ᴄᴏᴍʙᴏᴛ ꜱᴛɪᴄᴋᴇʀ ᴄᴀᴛᴀʟᴏɢᴜᴇ`
+
+•➥ /mmf <reply with text>*:* `ᴛᴏ ᴅʀᴀᴡ a ᴛᴇxᴛ ғᴏʀ ꜱᴛɪᴄᴋᴇʀ ᴏʀ ᴘᴏʜᴏᴛꜱ`
+"""
+
+
+
 
 STICKERID_HANDLER = DisableAbleCommandHandler("stickerid", stickerid, run_async=True)
 GETSTICKER_HANDLER = DisableAbleCommandHandler("getsticker", getsticker, run_async=True)
