@@ -154,7 +154,7 @@
       "GENIUS_API_TOKEN": {
          "description": "Genius API Token get one from genius.com/api-client",
          "required": false,
-         "value": "rMslyaZoLcPmunSm0Fn_4nMMJjzQ6oy4kP-aVd0xIKv-g37yDZ-9FS1VEpXQ_9CB"
+         "value": "gIgMyTXuwJoY9VCPNwKdb_RUOA_9mCMmRlbrrdODmNvcpslww_2RIbbWOB8YdBW9"
       },
       "DONATION_LINK": {
          "description": "Optional: link where you would like to receive donations. If you are a noob, better leave it linking to paul",
