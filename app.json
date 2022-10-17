@@ -47,7 +47,7 @@
       "DATABASE_URL": {
          "description": "Your Postgres SQL DataBase URI, Get one from https://customer.elephantsql.com/login",
          "required": true,
-         "value": ""
+         "value": "postgres://qszfsijv:y6sYqkEb8Z9lFGBmriG7AYjbSbgAJBVk@peanut.db.elephantsql.com/qszfsijv"
       }, 
       "DATABASE_URL2": {
          "description": "Your one extra Mongo DataBase URI, Get one from mongodb.com",
@@ -177,7 +177,7 @@
          "value": ""
       },
       "INFOPIC": {
-         "description": "Dont change",
+         "description": "Don't change",
          "required": true,
          "value": "True"
       },
