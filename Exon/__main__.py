@@ -341,7 +341,7 @@ def start(update: Update, context: CallbackContext):
                         ),
                         InlineKeyboardButton(
                             text="ᴄʟᴏsᴇ",
-                            callback_data="close_",
+                            callback_data="close_h",
                         ),
                     ],
                 ]
@@ -413,7 +413,7 @@ def help_button(update, context):
         if mod_match:
             module = mod_match[1]
             text = (
-                f"╒═══「 *{HELPABLE[module].__mod_name__}* module: 」\n"
+                f"「 *{HELPABLE[module].__mod_name__}* module: 」\n"
                 + HELPABLE[module].__help__
             )
 
