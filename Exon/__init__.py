@@ -272,7 +272,7 @@ else:
     # YOUTUBE_API_KEY = Config.YOUTUBE_API_KEY
     HELP_IMG = Config.HELP_IMG
     START_IMG = Config.START_IMG
-
+    ALLOW_EXCL = Config.ALLOW_EXCL
     BOT_API_URL = Config.BOT_API_URL
 
 # try:
