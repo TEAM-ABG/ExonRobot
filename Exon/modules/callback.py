@@ -53,7 +53,6 @@ from Exon import (
     UPDATES_CHANNEL,
     StartTime,
     dispatcher,
-    update,
 )
 
 
