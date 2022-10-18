@@ -127,6 +127,8 @@ if ENV:
     DB_URL = os.environ.get(
         "DATABASE_URL"
     )  # Any SQL Database Link (RECOMMENDED:- PostgreSQL & elephantsql.com)
+    DB_URI = os.environ.get("DATABASE_URL")
+    
     DB_URL2 = os.environ.get("DATABASE_URL2")
     DONATION_LINK = os.environ.get("DONATION_LINK")  # Donation Link (ANY)
     LOAD = os.environ.get("LOAD", "").split()  # Don't Change
