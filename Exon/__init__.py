@@ -327,13 +327,7 @@ telegraph.create_account(short_name="Exon")
 # updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True)
 
 
-updater = tg.Updater(
-    token=TOKEN,
-    base_url=BOT_API_URL,
-    workers=WORKERS,
-    request_kwargs={"read_timeout": 10, "connect_timeout": 10},
-    use_context=True,
-)
+updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True)
 
 
 print("[EXON ]: ᴛᴇʟᴇᴛʜᴏɴ ᴄʟɪᴇɴᴛ sᴛᴀʀᴛɪɴɢ")
@@ -362,9 +356,12 @@ arq = ARQ(ARQ_API_URL, ARQ_API_KEY, aiohttpsession)
 print("[ᴇxᴏɴ]: ᴄᴏɴɴᴇᴄᴛɪɴɢ ᴛᴏ ᴇxᴏɴ • PostgreSQL ᴅᴀᴛᴀʙᴀsᴇ")
 # ubot = TelegramClient(StringSession(STRING_SESSION), APP_ID, APP_HASH)
 print("[ᴇxᴏɴ]: ᴄᴏɴɴᴇᴄᴛɪɴɢ ᴛᴏ ᴇxᴏɴ • ᴜsᴇʀʙᴏᴛ (t.me/AbishnoiMF)")
+
+
+"""
 timeout = httpx.Timeout(40)
 http = httpx.AsyncClient(http2=True, timeout=timeout)
-
+"""
 
 async def get_entity(client, entity):
     entity_client = client
@@ -393,7 +390,7 @@ async def get_entity(client, entity):
     return entity, entity_client
 
 
-# BOT INFO
+
 updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True)
 
 # bot info
@@ -404,6 +401,8 @@ DEV_USERS.add(hex.erh)
 BOT_ID = dispatcher.bot.id
 BOT_NAME = dispatcher.bot.first_name
 BOT_USERNAME = dispatcher.bot.username
+
+
 
 
 apps = [pgram]
