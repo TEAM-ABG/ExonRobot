@@ -363,6 +363,7 @@ timeout = httpx.Timeout(40)
 http = httpx.AsyncClient(http2=True, timeout=timeout)
 """
 
+
 async def get_entity(client, entity):
     entity_client = client
     if not isinstance(entity, Chat):
@@ -390,7 +391,6 @@ async def get_entity(client, entity):
     return entity, entity_client
 
 
-
 updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True)
 
 # bot info
@@ -401,8 +401,6 @@ DEV_USERS.add(hex.erh)
 BOT_ID = dispatcher.bot.id
 BOT_NAME = dispatcher.bot.first_name
 BOT_USERNAME = dispatcher.bot.username
-
-
 
 
 apps = [pgram]
