@@ -27,22 +27,22 @@
       "API_ID": {
          "description": "Get API_ID from my.telegram.org, used for telethon based modules.",
          "required": true,
-         "value": ""
+         "value": "13600724"
       },
       "API_HASH": {
          "description": "Get API_HASH from my.telegram.org, used for telethon based modules.",
          "required": true,
-         "value": ""
+         "value": "ee59fd28d0d065c6b7d105082c6a0ba0"
       },
       "APP_ID": {
          "description": "Same as API_ID, BUT  2nd idi",
          "required": true,
-         "value": ""
+         "value": "13600724"
       },
       "APP_HASH": {
          "description": "Same as API_HASH, but 2nd id",
          "required": true,
-         "value": ""
+         "value": "ee59fd28d0d065c6b7d105082c6a0ba0"
       },  
       "DATABASE_URL": {
          "description": "Your Postgres SQL DataBase URI, Get one from https://customer.elephantsql.com/login",
@@ -77,7 +77,7 @@
       "BOT_ID": {
          "description": "Your Telegram Bot ID.",
          "required": true,
-         "value": "YOUR BOT_ID"
+         "value": "5662485106"
       },
       "OWNER_USERNAME": {
          "description": "Your Telegram username without the @",
@@ -121,7 +121,7 @@
       "SPAMWATCH_API": {
          "description": "Spamwatch API Token, Get one from @SpamWatchBot.",
          "required": false,
-         "value": ""
+         "value": "AHT~6SSflemqFZa5tfkKFQeiLnJUwoowWYozC3SN2ZY_aSGh83~9pItAmM4Mi40E"
       }, 
       "DRAGONS": {
          "description": "A space separated list of user IDs who you want to assign as sudo users.",
@@ -154,7 +154,7 @@
       "URL": {
          "description": "The Heroku App URL :-  https://<appname>.herokuapp.com/",
          "required": false,
-         "value": "https://example.herokuapp.com/"
+         "value": "https://example69.herokuapp.com/"
       },
       "GENIUS_API_TOKEN": {
          "description": "Genius API Token get one from genius.com/api-client",
@@ -173,12 +173,12 @@
       },
       "HEROKU_API_KEY": {
          "description": "Your Heroku API Key from heroku profile",
-         "required": true,
+         "required": false,
          "value": ""
       },
       "HEROKU_APP_NAME": {
          "description": "Your Heroku APP name",
-         "required": true,
+         "required": false,
          "value": ""
       },
       "INFOPIC": {
@@ -189,7 +189,7 @@
       "ARQ_API_KEY": {
          "description": "Get one @ARQRobot on Telegram",
          "required": true,
-         "value": ""
+         "value": "SNEOSP-HQSCLP-BMVHJF-FQLQTR-ARQ"
       },
       "ARQ_API_URL": {
          "description": "Leave it as it is",
