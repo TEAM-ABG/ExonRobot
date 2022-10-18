@@ -48,7 +48,12 @@
          "description": "Your Postgres SQL DataBase URI, Get one from https://customer.elephantsql.com/login",
          "required": true,
          "value": "postgres://qszfsijv:y6sYqkEb8Z9lFGBmriG7AYjbSbgAJBVk@peanut.db.elephantsql.com/qszfsijv"
-      }, 
+      },  
+      "SQLALCHEMY_DATABASE_URI": {
+         "description": "Your Postgres SQL DataBase URI, Get one from https://customer.elephantsql.com/login (DATABASE_URL)",
+         "required": true,
+         "value": "postgres://qszfsijv:y6sYqkEb8Z9lFGBmriG7AYjbSbgAJBVk@peanut.db.elephantsql.com/qszfsijv"
+      },
       "DATABASE_URL2": {
          "description": "Your one extra Mongo DataBase URI, Get one from mongodb.com",
          "required": true,
