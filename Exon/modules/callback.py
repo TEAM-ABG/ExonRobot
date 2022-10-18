@@ -183,10 +183,10 @@ def Source_about_callback(update: Update, context: CallbackContext):
 
 
 Exon_about_callback = CallbackQueryHandler(
-    Exon_about_callback, pattern=r"Exon_about_callback", run_async=True
+    Exon_about_callback, pattern=r"about_", run_async=True
 )
 Source_about_callback = CallbackQueryHandler(
-    Source_about_callback, pattern=r"Source_about_callback", run_async=True
+    Source_about_callback, pattern=r"source_", run_async=True
 )
 
 
