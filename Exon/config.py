@@ -55,9 +55,9 @@ class Config(object):
     JOIN_LOGGER = "-1001497222182"
     EVENT_LOGS = "-1001497222182"
     ERROR_LOGS = "-1001497222182"
- 
-    SQLALCHEMY_DATABASE_URI = "" #sql 
-    DATABASH_URL = "" #sql
+
+    SQLALCHEMY_DATABASE_URI = ""  # sql
+    DATABASH_URL = ""  # sql
     DB_URL = ""
     MONGO_DB_URL = ""  # needed for any database modules
     MONGO_URL = ""
