@@ -121,7 +121,8 @@ def Exon_about_callback(update: Update, context: CallbackContext):
                 ]
             ),
         )
-        
+
+
 def Exon_support_callback(update: Update, context: CallbackContext):
     query = update.callback_query
     if query.data == "Exon_support":
@@ -194,8 +195,6 @@ Source_about_callback = CallbackQueryHandler(
 Exon_support_callback = CallbackQueryHandler(
     Exon_support_callback, pattern=r"Exon_support", run_async=True
 )
-
-
 
 
 dispatcher.add_handler(Exon_about_callback)
