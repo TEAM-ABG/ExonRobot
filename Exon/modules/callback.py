@@ -42,7 +42,7 @@ async def close(Client, cb: CallbackQuery):
 
 import time
 
-from telegram import InlineKeyboardButton, InlineKeyboardMarkup
+from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
 from telegram.ext import CallbackQueryHandler
 
 import Exon.modules.sql.users_sql as sql
