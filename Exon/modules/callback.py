@@ -35,6 +35,6 @@ from Exon import pgram as bot
 
 @bot.on_callback_query()
 async def close(Client, cb: CallbackQuery):
-    if cb.data == "close_":
+    if cb.data == "close_h":
         await cb.answer("Closed!")
         await cb.message.delete()
