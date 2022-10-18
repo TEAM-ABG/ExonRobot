@@ -39,14 +39,22 @@ async def close(Client, cb: CallbackQuery):
         await cb.answer()
         await cb.message.delete()
 
-        
-        
-from Exon import OWNER_ID, BOT_NAME, UPDATES_CHANNEL, SUPPORT_CHAT, StartTime
+
+import time
+
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup
 from telegram.ext import CallbackQueryHandler
-import time
+
 import Exon.modules.sql.users_sql as sql
-from Exon import dispatcher
+from Exon import (
+    BOT_NAME,
+    OWNER_ID,
+    SUPPORT_CHAT,
+    UPDATES_CHANNEL,
+    StartTime,
+    dispatcher,
+)
+
 
 def get_readable_time(seconds: int) -> str:
     count = 0
@@ -71,7 +79,6 @@ def get_readable_time(seconds: int) -> str:
     ping_time += ":".join(time_list)
 
     return ping_time
-
 
 
 def Exon_about_callback(update: Update, context: CallbackContext):
@@ -150,8 +157,8 @@ def Exon_about_callback(update: Update, context: CallbackContext):
                 ]
             ),
         )
-     
-           
+
+
 def Source_about_callback(update: Update, context: CallbackContext):
     query = update.callback_query
     if query.data == "source_":
@@ -179,14 +186,15 @@ def Source_about_callback(update: Update, context: CallbackContext):
                 [[InlineKeyboardButton(text="◁", callback_data="help_back")]]
             ),
         )
-        
- 
 
 
-Exon_about_callback = CallbackQueryHandler(Exon_about_callback, pattern=r"Exon_about_callback", run_async=True)
-Source_about_callback = CallbackQueryHandler(Source_about_callback, pattern=r"Source_about_callback", run_async=True)
+Exon_about_callback = CallbackQueryHandler(
+    Exon_about_callback, pattern=r"Exon_about_callback", run_async=True
+)
+Source_about_callback = CallbackQueryHandler(
+    Source_about_callback, pattern=r"Source_about_callback", run_async=True
+)
 
 
 dispatcher.add_handler(Exon_about_callback)
 dispatcher.add_handler(Source_about_callback)
-        
