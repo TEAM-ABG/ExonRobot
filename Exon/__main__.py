@@ -130,9 +130,9 @@ PM_START_TEXT = """
    *ᴍᴜᴛɪɴɢ*, *ʟᴏᴄᴋs* ᴀɴᴅ ᴍᴀɴʏ ᴍᴏʀᴇ.
    *ᴄʟɪᴄᴋ ᴏɴ ʜᴇʟᴘ ᴛᴏ ʟᴇᴀʀɴ ᴍᴏʀᴇ!*
    
-            ✦  *ᴜᴘᴛɪᴍᴇ :* `{}` 
-            ➣  *ᴜsᴇʀs :* `{}`
-            ➢  *ᴄʜᴀᴛs :* `0{}`
+            ⍟  *ᴜᴘᴛɪᴍᴇ :* `{}` 
+            ⍟  *ᴜsᴇʀs :* `{}`
+            ⍟  *ᴄʜᴀᴛs :* `0{}`
    ━━━━━━━ *ᴇxᴏɴ* ━━━━━━━ 
    ғɪʀꜱᴛ ᴀᴅᴅ ᴍᴇ ɪɴ ɢʀᴏᴜᴘ ᴛʜᴇɴ ꜱᴇᴇ ᴍʏ ᴘᴏᴡᴇʀ ʙᴀʙʏ 
 """
@@ -151,15 +151,9 @@ buttons = [
         )
     ],
     [
-        InlineKeyboardButton(text=" ᴄᴏᴍᴍᴀɴᴅs", callback_data="help_back"),
+        InlineKeyboardButton(text="ᴄᴏᴍᴍᴀɴᴅs ⚡", callback_data="help_back"),
         InlineKeyboardButton(
-            text="sᴏᴜʀᴄᴇ 🌐", url="https://github.com/TEAM-ABG/ExonRobot"
-        ),
-    ],
-    [
-        InlineKeyboardButton(text="sᴜᴘᴘᴏʀᴛ 🥂", url=f"https://t.me/{SUPPORT_CHAT}"),
-        InlineKeyboardButton(
-            text="ᴜᴘᴅᴀᴛᴇs 🏃‍♂️", url=f"https://t.me/{UPDATES_CHANNEL}"
+            text="ᴀʙᴏᴜᴛ ✨", callback_data="about_"
         ),
     ],
 ]
