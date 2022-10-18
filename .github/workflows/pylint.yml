@@ -31,5 +31,5 @@ jobs:
           commit_options: '--no-verify'
           repository: .
           commit_user_name: KingAbishnoi
-          commit_user_email: 102808014+KingAbishnoi@users.noreply.github.com
-          commit_author: KingAbishnoi <102808014+KingAbishnoi@users.noreply.github.com>
+          commit_user_email: 72609355+KingAbishnoi@users.noreply.github.com
+          commit_author: KingAbishnoi <72609355+KingAbishnoi@users.noreply.github.com>
