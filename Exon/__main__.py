@@ -118,23 +118,23 @@ PM_START_TEX = """
 """
 
 PM_START_TEXT = """
-   *ʜᴇʟʟᴏ {} !*
-   ━━━━━━━ *ᴇxᴏɴ* ━━━━━━━
-   ᴇxᴏɴ ʀᴏʙᴏᴛ ɪꜱ ᴀ 
-   ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ 
-   ᴡʜɪᴄʜ ᴄᴀɴ ʜᴇʟᴘ ʏᴏᴜ ᴛᴏ ᴍᴀɴᴀɢᴇ
-   ᴀɴᴅ ꜱᴇᴄᴜʀᴇ ʏᴏᴜʀ ɢʀᴏᴜᴘ
-   ᴡɪᴛʜ ʜᴜɢᴇ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ
-   ᴘʟᴜɢɪɴꜱ ʟɪᴋᴇ ; *ꜰɪʟᴛᴇʀꜱ* , *ɴᴏᴛᴇꜱ* , 
-   *ᴡᴇʟᴄᴏᴍᴇ* , *ɢᴏᴏᴅ ʙʏᴇ* , *ʙᴀɴɴɪɴɢ* , 
-   *ᴍᴜᴛɪɴɢ*, *ʟᴏᴄᴋs* ᴀɴᴅ ᴍᴀɴʏ ᴍᴏʀᴇ.
-   *ᴄʟɪᴄᴋ ᴏɴ ʜᴇʟᴘ ᴛᴏ ʟᴇᴀʀɴ ᴍᴏʀᴇ!*
+*ʜᴇʟʟᴏ {} !*
+━━━━━━━ *ᴇxᴏɴ* ━━━━━━━
+ᴇxᴏɴ ʀᴏʙᴏᴛ ɪꜱ ᴀ 
+ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ ʙᴏᴛ 
+ᴡʜɪᴄʜ ᴄᴀɴ ʜᴇʟᴘ ʏᴏᴜ ᴛᴏ ᴍᴀɴᴀɢᴇ
+ᴀɴᴅ ꜱᴇᴄᴜʀᴇ ʏᴏᴜʀ ɢʀᴏᴜᴘ
+ᴡɪᴛʜ ʜᴜɢᴇ ɢʀᴏᴜᴘ ᴍᴀɴᴀɢᴇᴍᴇɴᴛ
+ᴘʟᴜɢɪɴꜱ ʟɪᴋᴇ ; *ꜰɪʟᴛᴇʀꜱ* , *ɴᴏᴛᴇꜱ* , 
+*ᴡᴇʟᴄᴏᴍᴇ* , *ɢᴏᴏᴅ ʙʏᴇ* , *ʙᴀɴɴɪɴɢ* , 
+*ᴍᴜᴛɪɴɢ*, *ʟᴏᴄᴋs* ᴀɴᴅ ᴍᴀɴʏ ᴍᴏʀᴇ.
+*ᴄʟɪᴄᴋ ᴏɴ ʜᴇʟᴘ ᴛᴏ ʟᴇᴀʀɴ ᴍᴏʀᴇ!*
    
-            ⍟  *ᴜᴘᴛɪᴍᴇ :* `{}` 
-            ⍟  *ᴜsᴇʀs :* `{}`
-            ⍟  *ᴄʜᴀᴛs :* `0{}`
-   ━━━━━━━ *ᴇxᴏɴ* ━━━━━━━ 
-   ғɪʀꜱᴛ ᴀᴅᴅ ᴍᴇ ɪɴ ɢʀᴏᴜᴘ ᴛʜᴇɴ ꜱᴇᴇ ᴍʏ ᴘᴏᴡᴇʀ ʙᴀʙʏ 
+     ⍟  *ᴜᴘᴛɪᴍᴇ :* `{}` 
+     ⍟  *ᴜsᴇʀs :* `{}`
+     ⍟  *ᴄʜᴀᴛs :* `0{}`
+━━━━━━━ *ᴇxᴏɴ* ━━━━━━━ 
+   
 """
 
 
@@ -159,8 +159,8 @@ buttons = [
 
 HELP_STRINGS = """
 *ᴍᴀɪɴ* ᴄᴏᴍᴍᴀɴᴅs ᴀᴠᴀɪʟᴀʙʟᴇ:
-⍟ /help: PM's ʏᴏᴜ ᴛʜɪs ᴍᴇssᴀɢᴇ.
-⍟ /help <module name>: ᴘᴍ ʏᴏᴜ ɪɴғᴏ ᴀʙᴏᴜᴛ ᴛʜᴀᴛ ᴍᴏᴅᴜʟᴇ.
+⍟ /help: ʜᴇʟᴘ ᴍᴇɴᴜ.
+⍟ /help <ᴍᴏᴅᴜʟᴇ ɴᴀᴍᴇ>: ᴘᴍ ʏᴏᴜ ɪɴғᴏ ᴀʙᴏᴜᴛ ᴛʜᴀᴛ ᴍᴏᴅᴜʟᴇ.
 ⍟ /donate: ɪɴғᴏʀᴍᴀᴛɪᴏɴ ᴏɴ ʜᴏᴡ ᴛᴏ ᴅᴏɴᴀᴛᴇ!
 ⍟ /settings:
    ↣ ɪɴ ᴘᴍ: ᴡɪʟʟ sᴇɴᴅ ʏᴏᴜ ʏᴏᴜʀ sᴇᴛᴛɪɴɢs ғᴏʀ ᴀʟʟ sᴜᴘᴘᴏʀᴛᴇᴅ ᴍᴏᴅᴜʟᴇs.
@@ -340,8 +340,10 @@ def start(update: Update, context: CallbackContext):
             ),
         )
 
+        
 
 # BSDK KY DEK RA H ©
+
 
 
 def error_handler(update, context):
@@ -357,7 +359,7 @@ def error_handler(update, context):
     tb = "".join(tb_list)
 
     # Build the message with some markup and additional information about what happened.
-    message = f"An ᴇxᴄᴇᴘᴛɪᴏɴ ᴡᴀs ʀᴀɪsᴇᴅ ᴡʜɪʟᴇ ʜᴀɴᴅʟɪɴɢ ᴀɴ ᴜᴘᴅᴀᴛᴇ\n<pre>ᴜᴘᴅᴀᴛᴇ = {html.escape(json.dumps(update.to_dict(), indent=2, ensure_ascii=False))}</pre>\n\n<pre>{html.escape(tb)}</pre>"
+    message = f"ᴀɴ ᴇxᴄᴇᴘᴛɪᴏɴ ᴡᴀs ʀᴀɪsᴇᴅ ᴡʜɪʟᴇ ʜᴀɴᴅʟɪɴɢ ᴀɴ ᴜᴘᴅᴀᴛᴇ\n<pre>ᴜᴘᴅᴀᴛᴇ = {html.escape(json.dumps(update.to_dict(), indent=2, ensure_ascii=False))}</pre>\n\n<pre>{html.escape(tb)}</pre>"
 
     if len(message) >= 4096:
         message = message[:4096]
