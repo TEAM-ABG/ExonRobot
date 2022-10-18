@@ -252,13 +252,18 @@ Note:
 __mod_name__ = "𝙿ɪɴs"
 
 
-PIN_HANDLER = CommandHandler("pin", pin, pass_args=True, filters=Filters.chat_type.groups)
+PIN_HANDLER = CommandHandler(
+    "pin", pin, pass_args=True, filters=Filters.chat_type.groups
+)
 UNPIN_HANDLER = CommandHandler("unpin", unpin, filters=Filters.chat_type.groups)
 ATCPIN_HANDLER = CommandHandler(
     "antichannelpin", anti_channel_pin, pass_args=True, filters=Filters.chat_type.groups
 )
 CLCLDC_HANDLER = CommandHandler(
-    "cleanlinked", clean_linked_channel, pass_args=True, filters=Filters.chat_type.groups
+    "cleanlinked",
+    clean_linked_channel,
+    pass_args=True,
+    filters=Filters.chat_type.groups,
 )
 AMWLTRO_HANDLER = MessageHandler(
     Filters.forwarded & Filters.chat_type.groups, amwltro_conreko, edited_updates=False
