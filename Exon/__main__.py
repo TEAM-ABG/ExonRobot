@@ -37,7 +37,6 @@ from sys import version_info
 from typing import Optional
 
 from pyrogram import __version__ as pver
-from pyrogram import idle
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
 from telegram import __version__ as lver
 from telegram.error import (
@@ -814,7 +813,6 @@ def main():
     dispatcher.add_handler(donate_handler)
 
     dispatcher.add_error_handler(error_callback)
-
 
     if WEBHOOK:
         LOGGER.info("Using webhooks.")
