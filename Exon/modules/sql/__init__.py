@@ -1,4 +1,3 @@
-
 """
 MIT License
 Copyright (c) 2022 Aʙɪsʜɴᴏɪ
@@ -20,17 +19,16 @@ SOFTWARE.
 """
 
 
-
-
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker, scoped_session
+from sqlalchemy.orm import scoped_session, sessionmaker
 
-from Exon import DB_URI, DEBUG, LOGGER as log
-
+from Exon import DB_URI, DEBUG
+from Exon import LOGGER as log
 
 if DB_URI and DB_URI.startswith("postgres://"):
     DB_URI = DB_URI.replace("postgres://", "postgresql://", 1)
+
 
 def start() -> scoped_session:
     engine = create_engine(DB_URI, client_encoding="utf8", echo=DEBUG)
@@ -44,7 +42,7 @@ BASE = declarative_base()
 try:
     SESSION: scoped_session = start()
 except Exception as e:
-    log.exception(f'[PostgreSQL] Failed to connect due to {e}')
+    log.exception(f"[PostgreSQL] Failed to connect due to {e}")
     exit()
-   
+
 log.info("[PostgreSQL] Connection successful, session started.")
