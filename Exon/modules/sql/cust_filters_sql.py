@@ -20,7 +20,7 @@ SOFTWARE.
 
 import threading
 
-from sqlalchemy import Column, String, UnicodeText, Boolean, Integer, distinct, func
+from sqlalchemy import Boolean, Column, Integer, String, UnicodeText, distinct, func
 
 from Exon.modules.helper_funcs.msg_types import Types
 from Exon.modules.sql import BASE, SESSION
