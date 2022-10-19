@@ -33,13 +33,12 @@ import json
 import re
 import time
 import traceback
-from sys import version_info
+from sys import argv, version_info
 from typing import Optional
 
 from pyrogram import __version__ as pver
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
 from telegram import __version__ as lver
-from sys import argv
 from telegram.error import (
     BadRequest,
     ChatMigrated,
