@@ -23,7 +23,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import scoped_session, sessionmaker
 
-from Exon import DB_URI, DEBUG
+from Exon import DB_URI
 from Exon import LOGGER as log
 
 if DB_URI and DB_URI.startswith("postgres://"):
@@ -31,7 +31,7 @@ if DB_URI and DB_URI.startswith("postgres://"):
 
 
 def start() -> scoped_session:
-    engine = create_engine(DB_URI, client_encoding="utf8", echo=DEBUG)
+    engine = create_engine(DB_URI, client_encoding="utf8")#, echo=DEBUG)
     log.info("[PostgreSQL] Connecting to database......")
     BASE.metadata.bind = engine
     BASE.metadata.create_all(engine)
