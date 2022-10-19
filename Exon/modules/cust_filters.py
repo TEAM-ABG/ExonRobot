@@ -1,18 +1,14 @@
 """
 MIT License
-
 Copyright (c) 2022 Aʙɪsʜɴᴏɪ
-
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software, and to permit persons to whom the Software is
 furnished to do so, subject to the following conditions:
-
 The above copyright notice and this permission notice shall be included in all
 copies or substantial portions of the Software.
-
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -22,40 +18,40 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 
+
+
 import re
 from html import escape
 from typing import Optional
 
 import telegram
-from telegram import (
-    Chat,
-    InlineKeyboardButton,
-    InlineKeyboardMarkup,
-    Message,
-    ParseMode,
-)
+from telegram import Chat, ParseMode, InlineKeyboardMarkup, Message, InlineKeyboardButton
 from telegram.error import BadRequest
-from telegram.ext import DispatcherHandlerStop, Filters
-from telegram.utils.helpers import escape_markdown, mention_html
+from telegram.ext import (
+    DispatcherHandlerStop,
+    Filters,
+)
+from telegram.utils.helpers import mention_html, escape_markdown
 
-from Exon import DRAGONS
-from Exon import LOGGER as log
-from Exon import dispatcher
-from Exon.modules.connection import connected
-from Exon.modules.helper_funcs.alternate import send_message, typing_action
-from Exon.modules.helper_funcs.anonymous import AdminPerms, user_admin
-from Exon.modules.helper_funcs.decorators import Exoncallback, Exoncmd, Exonmsg
+from Exon import dispatcher, SUDO_USERS, LOGGER as log
 from Exon.modules.helper_funcs.extraction import extract_text
 from Exon.modules.helper_funcs.filters import CustomFilters
 from Exon.modules.helper_funcs.misc import build_keyboard_parser
 from Exon.modules.helper_funcs.msg_types import get_filter_type
 from Exon.modules.helper_funcs.string_handling import (
+    split_quotes,
     button_markdown_parser,
     escape_invalid_curly_brackets,
     markdown_to_html,
-    split_quotes,
 )
 from Exon.modules.sql import cust_filters_sql as sql
+
+from Exon.modules.connection import connected
+
+from Exon.modules.helper_funcs.alternate import send_message, typing_action
+from Exon.modules.helper_funcs.decorators import Exoncmd, Exonmsg, Exoncallback
+
+from ..modules.helper_funcs.anonymous import user_admin, AdminPerms
 
 HANDLER_GROUP = 10
 
@@ -73,7 +69,7 @@ ENUM_FUNC_MAP = {
 
 
 @typing_action
-@Exoncmd(command="filters", admin_ok=True)
+@Exoncmd(command='filters', admin_ok=True)
 def list_handlers(update, context):
     chat = update.effective_chat
     user = update.effective_user
@@ -82,21 +78,21 @@ def list_handlers(update, context):
     if conn is not False:
         chat_id = conn
         chat_name = dispatcher.bot.getChat(conn).title
-        filter_list = "*ғɪʟᴛᴇʀ ɪɴ {}:*\n"
+        filter_list = "*Filter in {}:*\n"
     else:
         chat_id = update.effective_chat.id
         if chat.type == "private":
             chat_name = "Local filters"
-            filter_list = "*ʟᴏᴄᴀʟ ғɪʟᴛᴇʀs:*\n"
+            filter_list = "*local filters:*\n"
         else:
             chat_name = chat.title
-            filter_list = "*ғɪʟᴛᴇʀs ɪɴ {}*:\n"
+            filter_list = "*Filters in {}*:\n"
 
     all_handlers = sql.get_chat_triggers(chat_id)
 
     if not all_handlers:
         send_message(
-            update.effective_message, "ɴᴏ ғɪʟᴛᴇʀs sᴀᴠᴇᴅ ɪɴ {}!".format(chat_name)
+            update.effective_message, "No filters saved in {}!".format(chat_name)
         )
         return
 
@@ -120,7 +116,7 @@ def list_handlers(update, context):
 
 
 # NOT ASYNC BECAUSE DISPATCHER HANDLER RAISED
-@Exoncmd(command="filter", run_async=False)
+@Exoncmd(command='filter', run_async=False)
 @user_admin(AdminPerms.CAN_CHANGE_INFO)
 @typing_action
 def filters(update, context):  # sourcery no-metrics
@@ -141,7 +137,7 @@ def filters(update, context):  # sourcery no-metrics
     if not msg.reply_to_message and len(args) < 2:
         send_message(
             update.effective_message,
-            "ᴘʟᴇᴀsᴇ ᴘʀᴏᴠɪᴅᴇ ᴋᴇʏʙᴏᴀʀᴅ ᴋᴇʏᴡᴏʀᴅ ғᴏʀ ᴛʜɪs ғɪʟᴛᴇʀ ᴛᴏ ʀᴇᴘʟʏ ᴡɪᴛʜ!",
+            "Please provide keyboard keyword for this filter to reply with!",
         )
         return
 
@@ -149,7 +145,7 @@ def filters(update, context):  # sourcery no-metrics
         if len(args) < 2:
             send_message(
                 update.effective_message,
-                "ᴘʟᴇᴀsᴇ ᴘʀᴏᴠɪᴅᴇ ᴋᴇʏᴡᴏʀᴅ ғᴏʀ ᴛʜɪs ғɪʟᴛᴇʀ ᴛᴏ ʀᴇᴘʟʏ ᴡɪᴛʜ!",
+                "Please provide keyword for this filter to reply with!",
             )
             return
         else:
@@ -179,7 +175,7 @@ def filters(update, context):  # sourcery no-metrics
         if not text:
             send_message(
                 update.effective_message,
-                "ᴛʜᴇʀᴇ ɪs ɴᴏ ғɪʟᴛᴇʀ ᴍᴇssᴀɢᴇ - ʏᴏᴜ ᴄᴀɴ'ᴛ JUST ʜᴀᴠᴇ ʙᴜᴛᴛᴏɴs, ʏᴏᴜ ɴᴇᴇᴅ ᴀ ᴍᴇssᴀɢᴇ ᴛᴏ ɢᴏ ᴡɪᴛʜ ɪᴛ!",
+                "There is no filter message - You can't JUST have buttons, you need a message to go with it!",
             )
             return
 
@@ -201,7 +197,7 @@ def filters(update, context):  # sourcery no-metrics
     elif not text and not file_type:
         send_message(
             update.effective_message,
-            "ᴘʟᴇᴀsᴇ ᴘʀᴏᴠɪᴅᴇ ᴋᴇʏᴡᴏʀᴅ ғᴏʀ ᴛʜɪs ғɪʟᴛᴇʀ ʀᴇᴘʟʏ ᴡɪᴛʜ!",
+            "Please provide keyword for this filter reply with!",
         )
         return
 
@@ -222,12 +218,12 @@ def filters(update, context):  # sourcery no-metrics
         if (msg.reply_to_message.text or msg.reply_to_message.caption) and not text:
             send_message(
                 update.effective_message,
-                "ᴛʜᴇʀᴇ ɪs ɴᴏ ғɪʟᴛᴇʀ ᴍᴇssᴀɢᴇ - ʏᴏᴜ ᴄᴀɴ'ᴛ JUST ʜᴀᴠᴇ ʙᴜᴛᴛᴏɴs, ʏᴏᴜ ɴᴇᴇᴅ ᴀ ᴍᴇssᴀɢᴇ ᴛᴏ ɢᴏ ᴡɪᴛʜ ɪᴛ!",
+                "There is no filter message - You can't JUST have buttons, you need a message to go with it!",
             )
             return
 
     else:
-        send_message(update.effective_message, "ɪɴᴠᴀʟɪᴅ ғɪʟᴛᴇʀ!")
+        send_message(update.effective_message, "Invalid filter!")
         return
 
     add = addnew_filter(update, chat_id, keyword, text, file_type, file_id, buttons)
@@ -237,14 +233,14 @@ def filters(update, context):  # sourcery no-metrics
     if add is True:
         send_message(
             update.effective_message,
-            "sᴀᴠᴇᴅ ғɪʟᴛᴇʀ '{}' in *{}*!".format(keyword, chat_name),
+            "Saved filter '{}' in *{}*!".format(keyword, chat_name),
             parse_mode=telegram.ParseMode.MARKDOWN,
         )
     raise DispatcherHandlerStop
 
 
 # NOT ASYNC BECAUSE DISPATCHER HANDLER RAISED
-@Exoncmd(command="stop", run_async=False)
+@Exoncmd(command='stop', run_async=False)
 @user_admin(AdminPerms.CAN_CHANGE_INFO)
 @typing_action
 def stop_filter(update, context):
@@ -260,13 +256,13 @@ def stop_filter(update, context):
         chat_id = update.effective_chat.id
         chat_name = "Local filters" if chat.type == "private" else chat.title
     if len(args) < 2:
-        send_message(update.effective_message, "ᴡʜᴀᴛ sʜᴏᴜʟᴅ ɪ sᴛᴏᴘ?")
+        send_message(update.effective_message, "What should i stop?")
         return
 
     chat_filters = sql.get_chat_triggers(chat_id)
 
     if not chat_filters:
-        send_message(update.effective_message, "ɴᴏ ғɪʟᴛᴇʀs ᴀᴄᴛɪᴠᴇ ʜᴇʀᴇ!")
+        send_message(update.effective_message, "No filters active here!")
         return
 
     for keyword in chat_filters:
@@ -274,14 +270,14 @@ def stop_filter(update, context):
             sql.remove_filter(chat_id, args[1])
             send_message(
                 update.effective_message,
-                "ᴏᴋᴀʏ, I'ʟʟ sᴛᴏᴘ ʀᴇᴘʟʏɪɴɢ ᴛᴏ ᴛʜᴀᴛ ғɪʟᴛᴇʀ ɪɴ *{}*.".format(chat_name),
+                "Okay, I'll stop replying to that filter in *{}*.".format(chat_name),
                 parse_mode=telegram.ParseMode.MARKDOWN,
             )
             raise DispatcherHandlerStop
 
     send_message(
         update.effective_message,
-        "ᴛʜᴀᴛ's ɴᴏᴛ ᴀ ғɪʟᴛᴇʀ - ᴄʟɪᴄᴋ: /filters ᴛᴏ ɢᴇᴛ ᴄᴜʀʀᴇɴᴛʟʏ ᴀᴄᴛɪᴠᴇ ғɪʟᴛᴇʀs.",
+        "That's not a filter - Click: /filters to get currently active filters.",
     )
 
 
@@ -301,7 +297,7 @@ def reply_filter(update, context):  # sourcery no-metrics
         pattern = r"( |^|[^\w])" + re.escape(keyword) + r"( |$|[^\w])"
         if re.search(pattern, to_match, flags=re.IGNORECASE):
             filt = sql.get_filter(chat.id, keyword)
-            if filt.reply == "ᴛʜᴇʀᴇ ɪs sʜᴏᴜʟᴅ ʙᴇ ᴀ ɴᴇᴡ ʀᴇᴘʟʏ":
+            if filt.reply == "there is should be a new reply":
                 buttons = sql.get_buttons(chat.id, filt.keyword)
                 keyb = build_keyboard_parser(context.bot, chat.id, buttons)
                 keyboard = InlineKeyboardMarkup(keyb)
@@ -374,7 +370,7 @@ def reply_filter(update, context):  # sourcery no-metrics
                                     reply_markup=keyboard,
                                 )
                             except BadRequest as excp:
-                                log.exception("ᴇʀʀᴏʀ ɪɴ ғɪʟᴛᴇʀs: " + excp.message)
+                                log.exception("Error in filters: " + excp.message)
                                 send_message(
                                     update.effective_message,
                                     get_exception(excp, filt, chat),
@@ -386,7 +382,9 @@ def reply_filter(update, context):  # sourcery no-metrics
                                     get_exception(excp, filt, chat),
                                 )
                             except BadRequest as excp:
-                                log.exception("ғᴀɪʟᴇᴅ ᴛᴏ sᴇɴᴅ ᴍᴇssᴀɢᴇ: " + excp.message)
+                                log.exception(
+                                    "Failed to send message: " + excp.message
+                                )
                 elif ENUM_FUNC_MAP[filt.file_type] == dispatcher.bot.send_sticker:
                     ENUM_FUNC_MAP[filt.file_type](
                         chat.id,
@@ -433,13 +431,13 @@ def reply_filter(update, context):  # sourcery no-metrics
                         try:
                             send_message(
                                 update.effective_message,
-                                "ʏᴏᴜ sᴇᴇᴍ ᴛᴏ ʙᴇ ᴛʀʏɪɴɢ ᴛᴏ ᴜsᴇ ᴀɴ ᴜɴsᴜᴘᴘᴏʀᴛᴇᴅ ᴜʀʟ ᴘʀᴏᴛᴏᴄᴏʟ. "
-                                "ᴛᴇʟᴇɢʀᴀᴍ ᴅᴏᴇsɴ'ᴛ sᴜᴘᴘᴏʀᴛ ʙᴜᴛᴛᴏɴs ғᴏʀ sᴏᴍᴇ ᴘʀᴏᴛᴏᴄᴏʟs, sᴜᴄʜ ᴀs tg://. ᴘʟᴇᴀsᴇ ᴛʀʏ "
-                                "ᴀɢᴀɪɴ......",
+                                "You seem to be trying to use an unsupported url protocol. "
+                                "Telegram doesn't support buttons for some protocols, such as tg://. Please try "
+                                "again...",
                             )
                         except BadRequest as excp:
-                            log.exception("ᴇʀʀᴏʀ ɪɴ ғɪʟᴛᴇʀs: " + excp.message)
-                    elif excp.message == "ʀᴇᴘʟʏ ᴍᴇssᴀɢᴇ ɴᴏᴛ ғᴏᴜɴᴅ":
+                            log.exception("Error in filters: " + excp.message)
+                    elif excp.message == "Reply message not found":
                         try:
                             context.bot.send_message(
                                 chat.id,
@@ -449,28 +447,30 @@ def reply_filter(update, context):  # sourcery no-metrics
                                 reply_markup=keyboard,
                             )
                         except BadRequest as excp:
-                            log.exception("ᴇʀʀᴏʀ ɪɴ ғɪʟᴛᴇʀs: " + excp.message)
+                            log.exception("Error in filters: " + excp.message)
                     else:
                         try:
                             send_message(
                                 update.effective_message,
-                                "ᴛʜɪs ᴍᴇssᴀɢᴇ ᴄᴏᴜʟᴅɴ'ᴛ ʙᴇ sᴇɴᴛ ᴀs ɪᴛ's ɪɴᴄᴏʀʀᴇᴄᴛʟʏ ғᴏʀᴍᴀᴛᴛᴇᴅ.",
+                                "This message couldn't be sent as it's incorrectly formatted.",
                             )
                         except BadRequest as excp:
-                            log.exception("ᴇʀʀᴏʀ ɪɴ ғɪʟᴛᴇʀs: " + excp.message)
-                        log.warning("ᴍᴇssᴀɢᴇ %s ᴄᴏᴜʟᴅ ɴᴏᴛ ʙᴇ ᴘᴀʀsᴇᴅ", str(filt.reply))
+                            log.exception("Error in filters: " + excp.message)
+                        log.warning(
+                            "Message %s could not be parsed", str(filt.reply)
+                        )
                         log.exception(
-                            "ᴄᴏᴜʟᴅ ɴᴏᴛ ᴘᴀʀsᴇ ғɪʟᴛᴇʀ %s ɪɴ ᴄʜᴀᴛ %s",
+                            "Could not parse filter %s in chat %s",
                             str(filt.keyword),
                             str(chat.id),
                         )
 
             else:
-                # LEGACY - all new filters will have has_markdown set to True.
+                    # LEGACY - all new filters will have has_markdown set to True.
                 try:
                     send_message(update.effective_message, filt.reply)
                 except BadRequest as excp:
-                    log.exception("ᴇʀʀᴏʀ ɪɴ ғɪʟᴛᴇʀs: " + excp.message)
+                    log.exception("Error in filters: " + excp.message)
             break
 
 
@@ -479,23 +479,23 @@ def rmall_filters(update, _):
     chat = update.effective_chat
     user = update.effective_user
     member = chat.get_member(user.id)
-    if member.status != "creator" and user.id not in DRAGONS:
+    if member.status != "creator" and user.id not in SUDO_USERS:
         update.effective_message.reply_text(
-            "ᴏɴʟʏ ᴛʜᴇ ᴄʜᴀᴛ ᴏᴡɴᴇʀ ᴄᴀɴ ᴄʟᴇᴀʀ ᴀʟʟ ɴᴏᴛᴇs ᴀᴛ ᴏɴᴄᴇ ."
+            "Only the chat owner can clear all notes at once."
         )
     else:
         buttons = InlineKeyboardMarkup(
             [
                 [
                     InlineKeyboardButton(
-                        text="✦ sᴛᴏᴘ ᴀʟʟ ғɪʟᴛᴇʀs", callback_data="filters_rmall"
+                        text="Stop all filters", callback_data="filters_rmall"
                     )
                 ],
-                [InlineKeyboardButton(text="✲ ᴄᴀɴᴄᴇʟ", callback_data="filters_cancel")],
+                [InlineKeyboardButton(text="Cancel", callback_data="filters_cancel")],
             ]
         )
         update.effective_message.reply_text(
-            f"ᴀʀᴇ ʏᴏᴜ sᴜʀᴇ you ᴡᴏᴜʟᴅ ʟɪᴋᴇ ᴛᴏ sᴛᴏᴘ ᴀʟʟ ғɪʟᴛᴇʀs ɪɴ {chat.title}? ᴛʜɪs ᴀᴄᴛɪᴏɴ ᴄᴀɴɴᴏᴛ ʙᴇ ᴜɴᴅᴏɴᴇ.",
+            f"Are you sure you would like to stop ALL filters in {chat.title}? This action cannot be undone.",
             reply_markup=buttons,
             parse_mode=ParseMode.MARKDOWN,
         )
@@ -511,7 +511,7 @@ def rmall_callback(update, _):
         if member.status == "creator" or query.from_user.id in SUDO_USERS:
             allfilters = sql.get_chat_triggers(chat.id)
             if not allfilters:
-                msg.edit_text("ɴᴏ ғɪʟᴛᴇʀs ɪɴ ᴛʜɪs chat, ɴᴏᴛʜɪɴɢ ᴛᴏ sᴛᴏᴘ!")
+                msg.edit_text("No filters in this chat, nothing to stop!")
                 return
 
             count = 0
@@ -523,43 +523,43 @@ def rmall_callback(update, _):
             for i in filterlist:
                 sql.remove_filter(chat.id, i)
 
-            msg.edit_text(f"ᴄʟᴇᴀɴᴇᴅ {count} ғɪʟᴛᴇʀs ɪɴ {chat.title}")
+            msg.edit_text(f"Cleaned {count} filters in {chat.title}")
 
         if member.status == "administrator":
-            query.answer("ᴏɴʟʏ ᴏᴡɴᴇʀ ᴏғ ᴛʜᴇ ᴄʜᴀᴛ ᴄᴀɴ ᴅᴏ ᴛʜɪs.")
+            query.answer("Only owner of the chat can do this.")
 
         if member.status == "member":
-            query.answer("ʏᴏᴜ ɴᴇᴇᴅ ᴛᴏ ʙᴇ ᴀᴅᴍɪɴ ᴛᴏ ᴅᴏ ᴛʜɪs.")
+            query.answer("You need to be admin to do this.")
     elif query.data == "filters_cancel":
-        if member.status == "creator" or query.from_user.id in DRAGONS:
-            msg.edit_text("ᴄʟᴇᴀʀɪɴɢ ᴏғ ᴀʟʟ ғɪʟᴛᴇʀs ʜᴀs ʙᴇᴇɴ ᴄᴀɴᴄᴇʟʟᴇᴅ.")
-            ʀᴇᴛᴜʀɴ
+        if member.status == "creator" or query.from_user.id in SUDO_USERS:
+            msg.edit_text("Clearing of all filters has been cancelled.")
+            return
         if member.status == "administrator":
-            query.answer("ᴏɴʟʏ ᴏᴡɴᴇʀ ᴏғ ᴛʜᴇ ᴄʜᴀᴛ ᴄᴀɴ ᴅᴏ ᴛʜɪs.")
+            query.answer("Only owner of the chat can do this.")
         if member.status == "member":
-            query.answer("ʏᴏᴜ ɴᴇᴇᴅ ᴛᴏ ʙᴇ ᴀᴅᴍɪɴ ᴛᴏ ᴅᴏ ᴛʜɪs.")
+            query.answer("You need to be admin to do this.")
 
 
 # NOT ASYNC NOT A HANDLER
 def get_exception(excp, filt, chat):
     if excp.message == "Unsupported url protocol":
-        return "ʏᴏᴜ sᴇᴇᴍ ᴛᴏ ʙᴇ ᴛʀʏɪɴɢ ᴛᴏ ᴜsᴇ ᴛʜᴇ ᴜʀʟ ᴘʀᴏᴛᴏᴄᴏʟ ᴡʜɪᴄʜ is ɴᴏᴛ sᴜᴘᴘᴏʀᴛᴇᴅ. ᴛᴇʟᴇɢʀᴀᴍ ᴅᴏᴇs ɴᴏᴛ sᴜᴘᴘᴏʀᴛ ᴋᴇʏ ғᴏʀ ᴍᴜʟᴛɪᴘʟᴇ ᴘʀᴏᴛᴏᴄᴏʟs, sᴜᴄʜ ᴀs tg: //. ᴘʟᴇᴀsᴇ ᴛʀʏ ᴀɢᴀɪɴ!"
-    elif excp.message == "ʀᴇᴘʟʏ ᴍᴇssᴀɢᴇ ɴᴏᴛ ғᴏᴜɴᴅ":
+        return "You seem to be trying to use the URL protocol which is not supported. Telegram does not support key for multiple protocols, such as tg: //. Please try again!"
+    elif excp.message == "Reply message not found":
         return "noreply"
     else:
-        log.warning("ᴍᴇssᴀɢᴇ %s ᴄᴏᴜʟᴅ ɴᴏᴛ ʙᴇ ᴘᴀʀsᴇᴅ", str(filt.reply))
+        log.warning("Message %s could not be parsed", str(filt.reply))
         log.exception(
-            "ᴄᴏᴜʟᴅ ɴᴏᴛ ᴘᴀʀsᴇ ғɪʟᴛᴇʀ %s ɪɴ ᴄʜᴀᴛ %s", str(filt.keyword), str(chat.id)
+            "Could not parse filter %s in chat %s", str(filt.keyword), str(chat.id)
         )
-        return "ᴛʜɪs ᴅᴀᴛᴀ ᴄᴏᴜʟᴅ ɴᴏᴛ ʙᴇ sᴇɴᴛ ʙᴇᴄᴀᴜsᴇ ɪᴛ ɪs ɪɴᴄᴏʀʀᴇᴄᴛʟʏ ғᴏʀᴍᴀᴛᴛᴇᴅ."
+        return "This data could not be sent because it is incorrectly formatted."
 
 
 # NOT ASYNC NOT A HANDLER
 def addnew_filter(update, chat_id, keyword, text, file_type, file_id, buttons):
     msg = update.effective_message
     totalfilt = sql.get_chat_triggers(chat_id)
-    if len(totalfilt) >= 1000:  # Idk why i ᴍᴀᴅᴇ this like function....
-        msg.reply_text("ᴛʜɪs ɢʀᴏᴜᴘ ʜᴀs ʀᴇᴀᴄʜᴇᴅ ɪᴛs ᴍᴀx ғɪʟᴛᴇʀs ʟɪᴍɪᴛ ᴏғ 150.")
+    if len(totalfilt) >= 1000:  # Idk why i made this like function....
+        msg.reply_text("This group has reached its max filters limit of 150.")
         return False
     else:
         sql.new_add_filter(chat_id, keyword, text, file_type, file_id, buttons)
@@ -567,7 +567,7 @@ def addnew_filter(update, chat_id, keyword, text, file_type, file_id, buttons):
 
 
 def __stats__():
-    return "•➥  {} ғɪʟᴛᴇʀs, ᴀᴄʀᴏss {} ᴄʜᴀᴛs.".format(sql.num_filters(), sql.num_chats())
+    return "•➥ {} ғɪʟᴛᴇʀs, ᴀᴄʀᴏss {} ᴄʜᴀᴛs.".format(sql.num_filters(), sql.num_chats())
 
 
 def __import_data__(chat_id, data):
@@ -586,14 +586,13 @@ def __chat_settings__(chat_id, _):
     return "ᴛʜᴇʀᴇ ᴀʀᴇ `{}` ᴄᴜsᴛᴏᴍ ғɪʟᴛᴇʀs ʜᴇʀᴇ.".format(len(cust_filters))
 
 
+
 __help__ = """
 ❂ /filters*:* `ʟɪꜱᴛ ᴀʟʟ ᴀᴄᴛɪᴠᴇ ғɪʟᴛᴇʀꜱ ꜱᴀᴠᴇᴅ ɪɴ ᴛʜᴇ ᴄʜᴀᴛ`
-
 *ᴀᴅᴍɪɴ ᴏɴʟʏ:*
 ❂ /filter <keyword> <reply message>*:* ᴀᴅᴅ a ғɪʟᴛᴇʀ ᴛᴏ ᴛʜɪꜱ chat. ᴛʜᴇ ʙᴏᴛ ᴡɪʟʟ ɴᴏᴡ ʀᴇᴘʟʏ ᴛʜᴀᴛ ᴍᴇꜱꜱᴀɢᴇ ᴡʜᴇɴᴇᴠᴇʀ 'ᴋᴇʏᴡᴏʀᴅ
 ɪꜱ ᴍᴇɴᴛɪᴏɴᴇᴅ. ɪғ ʏᴏᴜ ʀᴇᴘʟʏ ᴛᴏ ᴀ ꜱᴛɪᴄᴋᴇʀ ᴡɪᴛʜ ᴀ ᴋᴇʏᴡᴏʀᴅ, ᴛʜᴇ ʙᴏᴛ ᴡɪʟʟ ʀᴇᴘʟʏ ᴡɪᴛʜ ᴛʜᴀᴛ ꜱᴛɪᴄᴋᴇʀ. ɴᴏᴛᴇ: ᴀʟʟ ғɪʟᴛᴇʀ 
 ᴋᴇʏᴡᴏʀᴅꜱ ᴀʀᴇ ɪɴ ʟᴏᴡᴇʀᴄᴀꜱᴇ. ɪғ ʏᴏᴜ ᴡᴀɴᴛ ʏᴏᴜʀ ᴋᴇʏᴡᴏʀᴅ ᴛᴏ ʙᴇ ᴀ ꜱᴇɴᴛᴇɴᴄᴇꜱ, ᴜꜱᴇ ϙᴜᴏᴛᴇꜱ. ᴇɢ: /filter "hey there" ʜᴇʏ ʜᴇʟʟᴏ 
-
  ꜱᴇᴘᴀʀᴀᴛᴇ ᴅɪғғ ʀᴇᴘʟɪᴇꜱ ʙʏ `%%%` ᴛᴏ ɢᴇᴛ ʀᴀɴᴅᴏᴍ ʀᴇᴘʟɪᴇꜱ
  
  *ᴇxᴀᴍᴘʟᴇ:* 
@@ -603,15 +602,11 @@ __help__ = """
  Reply 2
  %%%
  Reply 3`
-
 ❂ /stop <filter keyword>*:* `ꜱᴛᴏᴘ ᴛʜᴀᴛ ғɪʟᴛᴇʀ`
-
 *ᴄʜᴀᴛ creator only:*
 ❂ /removeallfilters*:* `ʀᴇᴍᴏᴠᴇ ᴀʟʟ ᴄʜᴀᴛ ғɪʟᴛᴇʀꜱ ᴀᴛ ᴏɴᴄᴇ`.
-
 *ɴᴏᴛᴇ*: ғɪʟᴛᴇʀꜱ ᴀʟꜱᴏ ꜱᴜᴘᴘᴏʀᴛ ᴍᴀʀᴋᴅᴏᴡɴ formatters like: {first}, {last} ᴇᴛᴄ.. ᴀɴᴅ ʙᴜᴛᴛᴏɴꜱ.
-
 ᴄʜᴇᴄᴋ /markdownhelp ᴛᴏ ᴋɴᴏᴡ ᴍᴏʀᴇ!
-
 """
 __mod_name__ = "𝙵ɪʟᴛᴇʀs"
+
