@@ -35,8 +35,9 @@ from telegram.error import BadRequest
 from telegram.ext import DispatcherHandlerStop, Filters
 from telegram.utils.helpers import escape_markdown, mention_html
 
+from Exon import DRAGONS as SUDO_USERS
 from Exon import LOGGER as log
-from Exon import DRAGONS as SUDO_USERS, dispatcher
+from Exon import dispatcher
 from Exon.modules.connection import connected
 from Exon.modules.helper_funcs.alternate import send_message, typing_action
 from Exon.modules.helper_funcs.decorators import Exoncallback, Exoncmd, Exonmsg
