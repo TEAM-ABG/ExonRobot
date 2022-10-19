@@ -339,6 +339,7 @@ def start(update: Update, context: CallbackContext):
 
 # BSDK KY DEK RA H ©
 
+
 def error_handler(update, context):
     """Log the error and send a telegram message to notify the developer."""
     # Log the error before we do anything else, so we can see it even if something breaks.
@@ -365,7 +366,6 @@ def error_handler(update, context):
         message = message[:4096]
     # Finally, send the message
     context.bot.send_message(chat_id=OWNER_ID, text=message, parse_mode=ParseMode.HTML)
-
 
 
 def error_callback(update: Update, context: CallbackContext):
@@ -395,7 +395,6 @@ def error_callback(update: Update, context: CallbackContext):
     except TelegramError:
         print(error)
         # handle all other telegram related errors
-
 
 
 def help_button(update, context):
