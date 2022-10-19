@@ -815,8 +815,9 @@ def main():
 
     dispatcher.add_error_handler(error_callback)
 
+
     if WEBHOOK:
-        LOGGER.info("ᴜsɪɴɢ webhooks.")
+        LOGGER.info("Using webhooks.")
         updater.start_webhook(listen="0.0.0.0", port=PORT, url_path=TOKEN)
 
         if CERT_PATH:
@@ -825,13 +826,15 @@ def main():
             updater.bot.set_webhook(url=URL + TOKEN)
 
     else:
-        LOGGER.info(f"ᴇxᴏɴ sᴛᴀʀᴛᴇᴅ, ᴜsɪɴɢ ʟᴏɴɢ ᴘᴏʟʟɪɴɢ. | SUPPORT: [@{SUPPORT_CHAT}]")
-        updater.start_polling(
-            timeout=15,
-            read_latency=4,
-            drop_pending_updates=True,
-            allowed_updates=Update.ALL_TYPES,
-        )
+        LOGGER.info("ᴜsɪɴɢ ʟᴏɴɢ ᴘᴏʟʟɪɴɢ.")
+        updater.start_polling(timeout=15, read_latency=4, clean=True)
+
+    if len(argv) not in (1, 3, 4):
+        telethn.disconnect()
+    else:
+        telethn.run_until_disconnected()
+
+    updater.idle()
 
 
 if __name__ == "__main__":
@@ -841,4 +844,4 @@ if __name__ == "__main__":
     telethn.start(bot_token=TOKEN)
     pgram.start()
     main()
-    idle()
+    # idle()
