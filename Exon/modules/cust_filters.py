@@ -19,39 +19,40 @@ SOFTWARE.
 """
 
 
-
 import re
 from html import escape
 from typing import Optional
 
 import telegram
-from telegram import Chat, ParseMode, InlineKeyboardMarkup, Message, InlineKeyboardButton
-from telegram.error import BadRequest
-from telegram.ext import (
-    DispatcherHandlerStop,
-    Filters,
+from telegram import (
+    Chat,
+    InlineKeyboardButton,
+    InlineKeyboardMarkup,
+    Message,
+    ParseMode,
 )
-from telegram.utils.helpers import mention_html, escape_markdown
+from telegram.error import BadRequest
+from telegram.ext import DispatcherHandlerStop, Filters
+from telegram.utils.helpers import escape_markdown, mention_html
 
-from Exon import dispatcher, SUDO_USERS, LOGGER as log
+from Exon import LOGGER as log
+from Exon import SUDO_USERS, dispatcher
+from Exon.modules.connection import connected
+from Exon.modules.helper_funcs.alternate import send_message, typing_action
+from Exon.modules.helper_funcs.decorators import Exoncallback, Exoncmd, Exonmsg
 from Exon.modules.helper_funcs.extraction import extract_text
 from Exon.modules.helper_funcs.filters import CustomFilters
 from Exon.modules.helper_funcs.misc import build_keyboard_parser
 from Exon.modules.helper_funcs.msg_types import get_filter_type
 from Exon.modules.helper_funcs.string_handling import (
-    split_quotes,
     button_markdown_parser,
     escape_invalid_curly_brackets,
     markdown_to_html,
+    split_quotes,
 )
 from Exon.modules.sql import cust_filters_sql as sql
 
-from Exon.modules.connection import connected
-
-from Exon.modules.helper_funcs.alternate import send_message, typing_action
-from Exon.modules.helper_funcs.decorators import Exoncmd, Exonmsg, Exoncallback
-
-from ..modules.helper_funcs.anonymous import user_admin, AdminPerms
+from ..modules.helper_funcs.anonymous import AdminPerms, user_admin
 
 HANDLER_GROUP = 10
 
@@ -69,7 +70,7 @@ ENUM_FUNC_MAP = {
 
 
 @typing_action
-@Exoncmd(command='filters', admin_ok=True)
+@Exoncmd(command="filters", admin_ok=True)
 def list_handlers(update, context):
     chat = update.effective_chat
     user = update.effective_user
@@ -116,7 +117,7 @@ def list_handlers(update, context):
 
 
 # NOT ASYNC BECAUSE DISPATCHER HANDLER RAISED
-@Exoncmd(command='filter', run_async=False)
+@Exoncmd(command="filter", run_async=False)
 @user_admin(AdminPerms.CAN_CHANGE_INFO)
 @typing_action
 def filters(update, context):  # sourcery no-metrics
@@ -240,7 +241,7 @@ def filters(update, context):  # sourcery no-metrics
 
 
 # NOT ASYNC BECAUSE DISPATCHER HANDLER RAISED
-@Exoncmd(command='stop', run_async=False)
+@Exoncmd(command="stop", run_async=False)
 @user_admin(AdminPerms.CAN_CHANGE_INFO)
 @typing_action
 def stop_filter(update, context):
@@ -382,9 +383,7 @@ def reply_filter(update, context):  # sourcery no-metrics
                                     get_exception(excp, filt, chat),
                                 )
                             except BadRequest as excp:
-                                log.exception(
-                                    "Failed to send message: " + excp.message
-                                )
+                                log.exception("Failed to send message: " + excp.message)
                 elif ENUM_FUNC_MAP[filt.file_type] == dispatcher.bot.send_sticker:
                     ENUM_FUNC_MAP[filt.file_type](
                         chat.id,
@@ -456,9 +455,7 @@ def reply_filter(update, context):  # sourcery no-metrics
                             )
                         except BadRequest as excp:
                             log.exception("Error in filters: " + excp.message)
-                        log.warning(
-                            "Message %s could not be parsed", str(filt.reply)
-                        )
+                        log.warning("Message %s could not be parsed", str(filt.reply))
                         log.exception(
                             "Could not parse filter %s in chat %s",
                             str(filt.keyword),
@@ -466,7 +463,7 @@ def reply_filter(update, context):  # sourcery no-metrics
                         )
 
             else:
-                    # LEGACY - all new filters will have has_markdown set to True.
+                # LEGACY - all new filters will have has_markdown set to True.
                 try:
                     send_message(update.effective_message, filt.reply)
                 except BadRequest as excp:
@@ -586,7 +583,6 @@ def __chat_settings__(chat_id, _):
     return "ᴛʜᴇʀᴇ ᴀʀᴇ `{}` ᴄᴜsᴛᴏᴍ ғɪʟᴛᴇʀs ʜᴇʀᴇ.".format(len(cust_filters))
 
 
-
 __help__ = """
 ❂ /filters*:* `ʟɪꜱᴛ ᴀʟʟ ᴀᴄᴛɪᴠᴇ ғɪʟᴛᴇʀꜱ ꜱᴀᴠᴇᴅ ɪɴ ᴛʜᴇ ᴄʜᴀᴛ`
 *ᴀᴅᴍɪɴ ᴏɴʟʏ:*
@@ -609,4 +605,3 @@ __help__ = """
 ᴄʜᴇᴄᴋ /markdownhelp ᴛᴏ ᴋɴᴏᴡ ᴍᴏʀᴇ!
 """
 __mod_name__ = "𝙵ɪʟᴛᴇʀs"
-
