@@ -36,11 +36,40 @@ _**ᴀᴠᴀɪʟᴀʙʟᴇ ᴏɴ ᴛᴇʟᴇɢʀᴀᴍ ᴀs [ᴇxᴏɴ ✘ ʀᴏ
 <b>𝗗𝗘𝗣𝗟𝗢𝗬𝗠𝗘𝗡𝗧 𝗠𝗘𝗧𝗛𝗢𝗗𝗦</b>
 </p>
 
+<h2 align="center"> 
+   ⇝ ɪɴsᴛᴀʟʟ ʟᴏᴄᴀʟʟʏ ᴏʀ ᴏɴ ᴀ ᴠᴘs ⇜
+</h2>
+
+```console
+$ sudo apt upgrade
+$ sudo apt install python3-pip
+$ git clone https://github.com/TEAM-ABG/ExonRobot
+$ cd <ʀᴇᴘᴏ ɴᴀᴍᴇ>
+$ pip3 install -U -r requirements.txt
+$ cd Exon
+$ cp config.py
+```
+ 
+<h3 align="center"> 
+    ᴇᴅɪᴛ <b>config.py</b> ᴡɪᴛʜ ɪɴ ʏᴏᴜʀ ᴏᴡɴ ᴠᴀʟᴜᴇs
+</h3>
+
+<h2 align="center"> 
+   ⇝ ʀᴜɴ ᴅɪʀᴇᴄᴛʟʏ ⇜
+</h2>
+
+```console
+$ python3 -m Exon
+```
+
+
+
+
+
+
 <h3 align="center">
     ─「 ᴅᴇᴩʟᴏʏ ᴏɴ ʜᴇʀᴏᴋᴜ 」─
 </h3>
-
-<p align="center"><a href="https://dashboard.heroku.com/new?template=https://github.com/TEAM-ABG/ExonRobot"> <img src="https://img.shields.io/badge/Deploy%20On%20Heroku-black?style=for-the-badge&logo=heroku" width="220" height="38.45"/></a></p>
 
 <p align="center"><a href="https://heroku-deployer.herokuapp.com"> <img src="https://img.shields.io/badge/Redirect%20To%20Heroku-black?style=for-the-badge&logo=heroku" width="200" height="35.45"/></a></p>
 
