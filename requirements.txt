@@ -4,7 +4,7 @@ aiohttp[speedups]
 aioredis
 alphabet_detector
 asyncio
-beautifulsoup4==4.11.1
+beautifulsoup4==4.11.2
 better_profanity
 bing_image_downloader
 bleach
